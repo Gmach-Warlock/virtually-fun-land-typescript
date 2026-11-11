@@ -1,9 +1,54 @@
+import { getNumericInput } from "../controller/inputs/getInputs.js";
+import {
+  openingGreeting,
+  openingMenu,
+} from "../controller/prompts/opening/openBanner.js";
+import { rl } from "../controller/inputs/getInputs.js";
+import { rng } from "../controller/rng/rngHelpers.js";
+
+export function respondToMainMenu(answer: number) {
+  console.log("respondToMainMenu", answer);
+  const lookup: any = {
+    1: () => {
+      console.log(`Coming soon`);
+      mainMenu();
+    },
+    2: () => {
+      console.log(`Coming soon`);
+      mainMenu();
+    },
+    3: () => {
+      console.log(`Coming soon`);
+      mainMenu();
+    },
+    4: () => {
+      console.log(`Coming soon`);
+      mainMenu();
+    },
+    5: () => {
+      console.log("coming");
+      mainMenu();
+    },
+    6: () => {
+      console.log("coming");
+      mainMenu();
+    },
+    7: () => exitApp(),
+  };
+  return lookup[answer]();
+}
+
+export function exitApp() {
+  console.log("Thank you for visiting.");
+  rl.close();
+}
+
 export async function mainMenu() {
-  console.log(`What would you like to do? 
-1. Add a guest
-2. Remove a guest 
-3. Log guests
-4. Board a ride
-5. View ride queues and times
-6. Exit`);
+  openingGreeting();
+  openingMenu();
+  const answer = await getNumericInput(
+    "Please enter the appropriate value: ",
+    7,
+  );
+  if (answer) respondToMainMenu(Number(answer));
 }

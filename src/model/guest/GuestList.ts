@@ -1,3 +1,4 @@
+import { addItemToArray } from "../../controller/crud/CRUDHelpers.js";
 import type { Guest } from "./Guest.js";
 
 export class GuestList {
@@ -15,6 +16,6 @@ export class GuestList {
   }
 
   add(guest: Guest) {
-    // need our function in typescript
+    this.#guests = addItemToArray(this.#guests, guest);
   }
 }

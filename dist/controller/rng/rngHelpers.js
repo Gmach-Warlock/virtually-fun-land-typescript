@@ -1,0 +1,56 @@
+export const theRegulars = [
+    "Robo Rob",
+    "Samus Space",
+    "Billy Draggin",
+    "Cody Bee",
+    "Ronnie Page",
+    "Solid Shark",
+    "Mega Boy",
+    "Dr Filey",
+    "Dr Robotisik",
+    "Sonya Horn",
+    "Chang Lee",
+    "M Bacon",
+    "Super Joe",
+    "Gale Wizard",
+    "Evil Lohse",
+    "Luigi Castle",
+    "Mario San",
+    "Drizz Miorden",
+    "Raistlin Marjorum",
+    "Kitiara Thuratam",
+];
+export function rng(possible) {
+    if (possible < 0) {
+        console.log("Please enter a positive integer");
+        return;
+    }
+    return Math.floor(Math.random() * possible);
+}
+export function randomizeArr(arr, numOfItems = arr.length) {
+    const copy = [...arr];
+    const random = [];
+    for (let i = 0; i < numOfItems; i++) {
+        if (copy.length < 0)
+            break;
+        const index = rng(copy.length);
+        if (index === undefined || index < 0)
+            return;
+        const [itemToRemove] = copy.splice(index, 1);
+        if (!itemToRemove)
+            return;
+        random.push(itemToRemove);
+    }
+    return random;
+}
+export function pullRandomAmount(arr) {
+    const randomAmount = rng(arr.length);
+    if (!randomAmount)
+        return;
+    const newArray = randomizeArr(arr, randomAmount);
+    if (!newArray)
+        return;
+    return newArray;
+}
+console.log(pullRandomAmount(theRegulars));
+//# sourceMappingURL=rngHelpers.js.map

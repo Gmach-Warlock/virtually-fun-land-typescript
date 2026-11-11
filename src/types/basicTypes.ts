@@ -1,2 +1,10 @@
 export type Basic = number | string | boolean;
 export type AllType = number | string | boolean | object | null | undefined;
+export type BasicNotify = "initialize" | "add" | "remove" | "view";
+export type LineNotify = "enqueu" | "dequeue" | "fast" | "leave";
+export type GuestNotify = "enter" | "leave" | "fastTurn" | "vip";
+export type GuestStatus = "general" | "vip";
+export type SimpleObj = Record<string | number, AllType>;
+export type Subscription = "guest" | "ride" | "game" | "park";
+export type Personality = "gamer" | "rider" | "watcher" | "wandererer";
+export type GStatus = "waiting" | "riding" | "playing" | "roaming";

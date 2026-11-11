@@ -2,7 +2,7 @@ import { stdin, stdout } from "process";
 import readline from "readline";
 import { isCleanNumber, isCleanString } from "./cleanInput.js";
 
-const rl = readline.createInterface({
+export const rl = readline.createInterface({
   input: stdin,
   output: stdout,
 });

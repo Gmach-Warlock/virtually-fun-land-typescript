@@ -4,10 +4,12 @@ import type { Ride } from "./Ride.js";
 export class Rider {
   #ride: Ride;
   #guest: Guest;
+  #next: Guest | null;
 
   constructor(ride: Ride, guest: Guest) {
     this.#ride = ride;
     this.#guest = guest;
+    this.#next = null;
   }
 
   get ride() {
@@ -21,5 +23,11 @@ export class Rider {
   }
   set guest(newGuest: Guest) {
     this.#guest = newGuest;
+  }
+  get next() {
+    return this.#next;
+  }
+  set next(newNext) {
+    this.#next = newNext;
   }
 }

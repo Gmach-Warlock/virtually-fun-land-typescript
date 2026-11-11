@@ -1,1 +1,1 @@
-{"version":3,"file":"getInputs.d.ts","sourceRoot":"","sources":["../../../src/controller/inputs/getInputs.ts"],"names":[],"mappings":"AAiBA,wBAAsB,eAAe,CAAC,QAAQ,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,+BAMlE;AAED,wBAAsB,cAAc,CAAC,QAAQ,EAAE,MAAM,EAAE,QAAQ,UAAO,+BAMrE"}
+{"version":3,"file":"getInputs.d.ts","sourceRoot":"","sources":["../../../src/controller/inputs/getInputs.ts"],"names":[],"mappings":"AACA,OAAO,QAAQ,MAAM,UAAU,CAAC;AAGhC,eAAO,MAAM,EAAE,oBAGb,CAAC;AAUH,wBAAsB,eAAe,CAAC,QAAQ,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,+BAMlE;AAED,wBAAsB,cAAc,CAAC,QAAQ,EAAE,MAAM,EAAE,QAAQ,UAAO,+BAMrE"}
