@@ -1,6 +1,9 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
-import { isCleanNumber, isCleanString } from "../controller/cleanInput.js";
+import {
+  isCleanNumber,
+  isCleanString,
+} from "../controller/inputs/cleanInput.js";
 
 describe("isCleanString", () => {
   it("should return false if the string is invalid in any way", () => {
