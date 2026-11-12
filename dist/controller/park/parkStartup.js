@@ -18,6 +18,5 @@ export function openPark() {
 export function initializePark() {
     buildPark();
     openPark();
-    console.log(vfl, vflCounters, vflQueues, vflTimers);
 }
 //# sourceMappingURL=parkStartup.js.map

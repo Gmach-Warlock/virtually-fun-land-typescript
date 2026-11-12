@@ -7,6 +7,10 @@ export interface CRUDableInstance<T> {
     remove(value: T): void;
     update(value: T): void;
     delete(value: T): void;
+    log?(): void;
+}
+export interface LoggableInstane<T> {
+    log(value: T): void;
 }
 export interface ParkBuilder {
     park: Park;

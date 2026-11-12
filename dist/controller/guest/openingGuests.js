@@ -1,36 +1,16 @@
-import { randomGuests, theRegulars } from "../../assets/guestPools.js";
-import { pullRandomAmount, randomizeArr } from "../rng/rngHelpers.js";
-import { Guest } from "../../model/guest/Guest.js";
-import { rng } from "../rng/rngHelpers.js";
-export function createOpeningCrowdNames() {
-    const regulars = randomizeArr(theRegulars);
-    const randoms = pullRandomAmount(randomGuests);
-    console.log("createOpeningCrowd", regulars, randoms);
-    return {
-        regulars,
-        randoms,
-    };
-}
-export function determinePersonalityType() {
-    const value = Math.random();
-    if (!value)
-        return "WTF";
-    if (value > 0.6)
-        return "rider";
-    if (value > 0.3)
-        return "gamer";
-    if (value > 0.1)
-        return "watcher";
-    return "wanderer";
-}
-function createOpeningCrowd(nameObj) {
-    const regulars = nameObj.regulars.map((name) => {
-        const personality = determinePersonalityType();
-        return new Guest(name);
+import { createGuest, createOpeningCrowdNames } from "./guestFactory.js";
+function createGroup(arr) {
+    const group = arr.map((name) => {
+        createGuest(name);
     });
-    const randoms = nameObj.randoms.map((name) => {
-        return new Guest(name);
-    });
+    return group;
 }
-export function seedOpeningCrowd(OpeningCrowd) { }
+function createOpeningCrowd(openingCrowd = createOpeningCrowdNames()) {
+    const regulars = createGroup(openingCrowd.regulars);
+    const randoms = createGroup(openingCrowd.randoms);
+    return { regulars, randoms };
+}
+export function seedOpeningCrowd(openingCrowd = createOpeningCrowdNames()) {
+    const crowd = createOpeningCrowd(openingCrowd);
+}
 //# sourceMappingURL=openingGuests.js.map
