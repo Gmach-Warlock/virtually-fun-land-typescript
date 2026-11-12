@@ -1,36 +1,39 @@
+import { commandLineCoasterInfo } from "../../assets/vflRides.js";
 import { Ride } from "../../model/ride/Ride.js";
-import { RideCabin } from "../../model/ride/RideCabin.js";
 import { RideCounter } from "../../model/ride/RideCounter.js";
+import { RideInfo } from "../../model/ride/RideInfo.js";
 import { RideQueue } from "../../model/ride/RideQueue.js";
 import { RideTimer } from "../../model/ride/RideTimer.js";
+import type { RideHubObj, RideInfoObj } from "../../types/rideInterfaces.js";
 
-export interface RideHubObj {
-  ride: Ride;
-  counter: RideCounter;
-  cabin: RideCabin;
-  timer: RideTimer;
-  queue: RideQueue;
-}
-
-export function createRideHub(
-  name: string,
-  duration: number,
-  max: number,
-  occupancy: number,
-) {
-  const newRide = new Ride(name);
+export function createRideHub({
+  id,
+  name,
+  description,
+  duration,
+  max,
+  type,
+  occupancy,
+}: RideInfoObj) {
+  const newRide = new Ride(id);
+  const newInfo = new RideInfo(
+    newRide,
+    name,
+    description,
+    type,
+    duration,
+    occupancy,
+  );
   const newCounter = new RideCounter(newRide, max);
-  const newCabin = new RideCabin(newRide, occupancy);
   const newTimer = new RideTimer(newRide, duration);
   const newQueue = new RideQueue(newRide);
   newRide.counter = newCounter;
-  newRide.cabin = newCabin;
   newRide.timer = newTimer;
   newRide.queue = newQueue;
   const rideObj: RideHubObj = {
     ride: newRide,
+    info: newInfo,
     counter: newCounter,
-    cabin: newCabin,
     timer: newTimer,
     queue: newQueue,
   };
@@ -38,6 +41,13 @@ export function createRideHub(
   return rideObj;
 }
 
-export function seedRide(rideObj: RideHubObj) {
+export function hydrateRide(rideObj: RideHubObj) {}
+
+const ride1 = createRideHub(commandLineCoasterInfo);
+console.log(ride1);
+
+// CREATE SOME RIDES STILL!!!
+
+export function seedInstance() {
   // setup Park Classes and connect
 }

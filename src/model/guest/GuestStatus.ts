@@ -1,4 +1,4 @@
-import type { GStatus } from "../../types/basicTypes.js";
+import type { GStatus } from "../../types/GuestTypes.js";
 import type { Guest } from "./Guest.js";
 
 export class GuestStatus {

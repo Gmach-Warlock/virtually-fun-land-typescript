@@ -1,6 +1,7 @@
 import type { Park } from "./Park.js";
 
 export class ParkCounters {
+  static #instance: ParkCounters | null = null;
   #park: Park | undefined;
   #counters: ParkCounters[] | undefined;
 
@@ -17,4 +18,13 @@ export class ParkCounters {
   set counters(newCounters) {
     this.#counters = newCounters;
   }
+
+  static getInstance() {
+    if (this.#instance === null) {
+      this.#instance = new ParkCounters();
+    }
+    return this.#instance;
+  }
 }
+
+export const vflCounters = ParkCounters.getInstance();

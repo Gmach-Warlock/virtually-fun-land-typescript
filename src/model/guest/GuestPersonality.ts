@@ -1,5 +1,5 @@
 import { Guest } from "./Guest.js";
-import type { Personality } from "../../types/basicTypes.js";
+import type { Personality } from "../../types/GuestTypes.js";
 
 export class GuestPersonality {
   #guest: Guest;

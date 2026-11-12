@@ -1,0 +1,1 @@
+{"version":3,"file":"RideCabin.d.ts","sourceRoot":"","sources":["../../../src/model/ride/RideCabin.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,WAAW,CAAC;AAEtC,qBAAa,SAAS;;IAIpB,YAAY,IAAI,EAAE,IAAI,EAAE,SAAS,EAAE,MAAM,EAGxC;IAED,IAAI,IAAI,SAEP;IACD,IAAI,IAAI,CAAC,OAAO,MAAA,EAEf;IACD,IAAI,SAAS,WAEZ;IACD,IAAI,SAAS,CAAC,YAAY,QAAA,EAEzB;CACF"}

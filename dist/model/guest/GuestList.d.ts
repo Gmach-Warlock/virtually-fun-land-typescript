@@ -5,5 +5,7 @@ export declare class GuestList {
     get guests(): Guest[];
     set guests(newGuests: Guest[]);
     add(guest: Guest): void;
+    remove(guest: Guest): void;
+    log(): void;
 }
 //# sourceMappingURL=GuestList.d.ts.map

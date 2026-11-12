@@ -1,15 +1,11 @@
-import type { RideCabin } from "../ride/RideCabin.js";
-import type { RideCounter } from "../ride/RideCounter.js";
-import type { RideQueue } from "../ride/RideQueue.js";
-import type { RideTimer } from "../ride/RideTimer.js";
+import type { ParkBuilder } from "../../types/basicInterfaces.js";
 
 export class Park {
   #name: string;
-  #counters: RideCounter[] | undefined;
-  #cabins: RideCabin[] | undefined;
-  #queues: RideQueue[] | undefined;
-  #timers: RideTimer[] | undefined;
-
+  #counters: ParkBuilder["counters"] | undefined;
+  #queues: ParkBuilder["queues"] | undefined;
+  #timers: ParkBuilder["timers"] | undefined;
+  static #instance: Park | null = null;
   constructor() {
     this.#name = "Virtually Fun Land";
   }
@@ -17,31 +13,36 @@ export class Park {
   get name() {
     return this.#name;
   }
-  set name(newName) {
-    this.#name = newName;
-  }
   get counters() {
     return this.#counters;
   }
-  set counters(newCounters) {
+  set counters(newCounters: ParkBuilder["counters"] | undefined) {
     this.#counters = newCounters;
-  }
-  get cabins() {
-    return this.#cabins;
-  }
-  set cabins(newCabins) {
-    this.#cabins = newCabins;
   }
   get queues() {
     return this.#queues;
   }
-  set queues(newQueues) {
+  set queues(newQueues: ParkBuilder["queues"] | undefined) {
     this.#queues = newQueues;
   }
   get timers() {
     return this.#timers;
   }
-  set timers(newTimers) {
+  set timers(newTimers: ParkBuilder["timers"] | undefined) {
     this.#timers = newTimers;
   }
+
+  static getInstance() {
+    if (this.#instance === null) {
+      this.#instance = new Park();
+    }
+    return this.#instance;
+  }
+  build(buildObj: ParkBuilder) {
+    this.#counters = buildObj.counters;
+    this.#timers = buildObj.timers;
+    this.#queues = buildObj.queues;
+  }
 }
+
+export const vfl = Park.getInstance();

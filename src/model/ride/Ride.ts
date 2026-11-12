@@ -1,36 +1,34 @@
-import type { RideCabin } from "./RideCabin.js";
+import type { RideInfo } from "./RideInfo.js";
 import type { RideCounter } from "./RideCounter.js";
 import type { RideQueue } from "./RideQueue.js";
 import type { RideTimer } from "./RideTimer.js";
+import type { RideInfoObj } from "../../types/rideInterfaces.js";
 
 export class Ride {
-  #name: string;
+  #id: string;
+  #info: RideInfo | undefined;
   #counter: RideCounter | undefined;
-  #cabin: RideCabin | undefined;
   #timer: RideTimer | undefined;
   #queue: RideQueue | undefined;
 
-  constructor(name: string) {
-    this.#name = name;
+  constructor(id: string) {
+    this.#id = id;
   }
 
-  get name() {
-    return this.#name;
+  get id() {
+    return this.#id;
   }
-  set name(newName) {
-    this.#name = newName;
+  get info() {
+    return this.#info;
+  }
+  set info(newInfo) {
+    this.#info = newInfo;
   }
   get counter() {
     return this.#counter;
   }
   set counter(newCounter) {
     this.#counter = newCounter;
-  }
-  get cabin() {
-    return this.#cabin;
-  }
-  set cabin(newCabin) {
-    this.#cabin = newCabin;
   }
   get timer() {
     return this.#timer;

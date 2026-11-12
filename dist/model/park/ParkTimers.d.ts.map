@@ -1,1 +1,1 @@
-{"version":3,"file":"ParkTimers.d.ts","sourceRoot":"","sources":["../../../src/model/park/ParkTimers.ts"],"names":[],"mappings":""}
+{"version":3,"file":"ParkTimers.d.ts","sourceRoot":"","sources":["../../../src/model/park/ParkTimers.ts"],"names":[],"mappings":"AAAA,OAAO,EAAO,KAAK,IAAI,EAAE,MAAM,WAAW,CAAC;AAE3C,qBAAa,UAAU;;IAKrB,cAGC;IAED,IAAI,IAAI,qBAEP;IACD,IAAI,IAAI,CAAC,OAAO,kBAAA,EAEf;IACD,IAAI,MAAM,6BAET;IACD,IAAI,MAAM,CAAC,SAAS,0BAAA,EAEnB;IAED,MAAM,CAAC,WAAW,eAKjB;CACF;AAED,eAAO,MAAM,SAAS,YAA2B,CAAC"}

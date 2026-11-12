@@ -1,25 +1,3 @@
-export const theRegulars = [
-    "Robo Rob",
-    "Samus Space",
-    "Billy Draggin",
-    "Cody Bee",
-    "Ronnie Page",
-    "Solid Shark",
-    "Mega Boy",
-    "Dr Filey",
-    "Dr Robotisik",
-    "Sonya Horn",
-    "Chang Lee",
-    "M Bacon",
-    "Super Joe",
-    "Gale Wizard",
-    "Evil Lohse",
-    "Luigi Castle",
-    "Mario San",
-    "Drizz Miorden",
-    "Raistlin Marjorum",
-    "Kitiara Thuratam",
-];
 export function rng(possible) {
     if (possible < 0) {
         console.log("Please enter a positive integer");
@@ -52,5 +30,4 @@ export function pullRandomAmount(arr) {
         return;
     return newArray;
 }
-console.log(pullRandomAmount(theRegulars));
 //# sourceMappingURL=rngHelpers.js.map

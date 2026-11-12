@@ -1,1 +1,1 @@
-{"version":3,"file":"ParkCounters.d.ts","sourceRoot":"","sources":["../../../src/model/park/ParkCounters.ts"],"names":[],"mappings":""}
+{"version":3,"file":"ParkCounters.d.ts","sourceRoot":"","sources":["../../../src/model/park/ParkCounters.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,WAAW,CAAC;AAEtC,qBAAa,YAAY;;IAKvB,cAEC;IAED,IAAI,IAAI,qBAEP;IACD,IAAI,QAAQ,+BAEX;IACD,IAAI,QAAQ,CAAC,WAAW,4BAAA,EAEvB;IAED,MAAM,CAAC,WAAW,iBAKjB;CACF;AAED,eAAO,MAAM,WAAW,cAA6B,CAAC"}

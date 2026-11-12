@@ -1,3 +1,7 @@
+import { addItemToArray, removeItemFromArray, } from "../../controller/crud/CRUDHelpers.js";
+function logGuest(guest) {
+    console.log(`Guest: ${guest.name}`);
+}
 export class GuestList {
     #guests;
     constructor() {
@@ -10,7 +14,14 @@ export class GuestList {
         this.#guests = newGuests;
     }
     add(guest) {
-        // need our function in typescript
+        this.#guests = addItemToArray(this.#guests, guest);
+    }
+    remove(guest) {
+        this.#guests =
+            removeItemFromArray(this.#guests, guest, "name", guest.name) ?? [];
+    }
+    log() {
+        this.#guests.forEach((guest) => logGuest(guest));
     }
 }
 //# sourceMappingURL=GuestList.js.map

@@ -1,5 +1,4 @@
-import type { Personality } from "../../types/basicTypes.js";
-
+import type { Personality } from "../../types/GuestTypes.js";
 export class Guest {
   #name: string;
   #personality: Personality | undefined;

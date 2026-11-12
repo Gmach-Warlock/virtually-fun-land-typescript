@@ -1,13 +1,38 @@
 export class Ride {
-    #name;
-    constructor(name) {
-        this.#name = name;
+    #id;
+    #info;
+    #counter;
+    #timer;
+    #queue;
+    constructor(id) {
+        this.#id = id;
     }
-    get name() {
-        return this.#name;
+    get id() {
+        return this.#id;
     }
-    set name(newName) {
-        this.#name = newName;
+    get info() {
+        return this.#info;
+    }
+    set info(newInfo) {
+        this.#info = newInfo;
+    }
+    get counter() {
+        return this.#counter;
+    }
+    set counter(newCounter) {
+        this.#counter = newCounter;
+    }
+    get timer() {
+        return this.#timer;
+    }
+    set timer(newTimer) {
+        this.#timer = newTimer;
+    }
+    get queue() {
+        return this.#queue;
+    }
+    set queue(newQueue) {
+        this.#queue = newQueue;
     }
 }
 //# sourceMappingURL=Ride.js.map

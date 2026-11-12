@@ -1,0 +1,1 @@
+{"version":3,"file":"createRides.d.ts","sourceRoot":"","sources":["../../../src/controller/ride/createRides.ts"],"names":[],"mappings":"AAMA,OAAO,KAAK,EAAE,UAAU,EAAE,WAAW,EAAE,MAAM,+BAA+B,CAAC;AAE7E,wBAAgB,aAAa,CAAC,EAC5B,EAAE,EACF,IAAI,EACJ,WAAW,EACX,QAAQ,EACR,GAAG,EACH,IAAI,EACJ,SAAS,GACV,EAAE,WAAW,cAyBb;AAED,wBAAgB,WAAW,CAAC,OAAO,EAAE,UAAU,QAAI;AAOnD,wBAAgB,YAAY,SAE3B"}

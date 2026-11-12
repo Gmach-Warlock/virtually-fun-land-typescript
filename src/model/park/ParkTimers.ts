@@ -1,10 +1,12 @@
-import type { Park } from "./Park.js";
+import { vfl, type Park } from "./Park.js";
 
 export class ParkTimers {
   #park: Park | undefined;
   #timers: ParkTimers[] | undefined;
+  static #instance: ParkTimers | null = null;
 
   constructor() {
+    this.#park = vfl;
     this.#timers = [];
   }
 
@@ -20,4 +22,13 @@ export class ParkTimers {
   set timers(newTimers) {
     this.#timers = newTimers;
   }
+
+  static getInstance() {
+    if (this.#instance === null) {
+      this.#instance = new ParkTimers();
+    }
+    return this.#instance;
+  }
 }
+
+export const vflTimers = ParkTimers.getInstance();

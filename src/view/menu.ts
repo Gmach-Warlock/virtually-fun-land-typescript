@@ -4,8 +4,6 @@ import {
   openingMenu,
 } from "../controller/prompts/opening/openBanner.js";
 import { rl } from "../controller/inputs/getInputs.js";
-import { rng } from "../controller/rng/rngHelpers.js";
-
 export function respondToMainMenu(answer: number) {
   console.log("respondToMainMenu", answer);
   const lookup: any = {

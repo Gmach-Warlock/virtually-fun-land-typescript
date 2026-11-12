@@ -1,1 +1,1 @@
-{"version":3,"file":"GuestStatus.d.ts","sourceRoot":"","sources":["../../../src/model/guest/GuestStatus.ts"],"names":[],"mappings":""}
+{"version":3,"file":"GuestStatus.d.ts","sourceRoot":"","sources":["../../../src/model/guest/GuestStatus.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,2BAA2B,CAAC;AACzD,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,YAAY,CAAC;AAExC,qBAAa,WAAW;;IAItB,YAAY,KAAK,EAAE,KAAK,EAAE,MAAM,EAAE,OAAO,EAGxC;IAED,IAAI,KAAK,UAER;IACD,IAAI,KAAK,CAAC,QAAQ,OAAA,EAEjB;IACD,IAAI,MAAM,YAET;IACD,IAAI,MAAM,CAAC,SAAS,SAAA,EAEnB;CACF"}
