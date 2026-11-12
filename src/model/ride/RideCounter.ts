@@ -29,4 +29,10 @@ export class RideCounter {
   set max(newMax: number) {
     this.#max = newMax;
   }
+
+  log() {
+    console.log(
+      `The ${this.ride.info?.name} currently has ${this.#count} many people waiting. The max amount is ${this.#max}`,
+    );
+  }
 }

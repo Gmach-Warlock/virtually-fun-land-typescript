@@ -1,4 +1,4 @@
-import type { Park } from "./Park.js";
+import { vfl, type Park } from "./Park.js";
 
 export class ParkQueues {
   #park: Park | undefined;
@@ -6,6 +6,7 @@ export class ParkQueues {
   static #instance: ParkQueues | null = null;
 
   constructor() {
+    this.#park = vfl;
     this.#queues = [];
   }
 

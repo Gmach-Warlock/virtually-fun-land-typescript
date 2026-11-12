@@ -1,4 +1,7 @@
 import type { Personality } from "../../types/GuestTypes.js";
+import { logGuest } from "../../controller/prompts/guest/guestHelpers.js";
+import type { BasicNotify } from "../../types/basicTypes.js";
+
 export class Guest {
   #name: string;
   #personality: Personality | undefined;
@@ -18,5 +21,9 @@ export class Guest {
   }
   set personality(newPersonality: Personality) {
     this.#personality = newPersonality;
+  }
+
+  log(type: BasicNotify) {
+    logGuest(type, this);
   }
 }

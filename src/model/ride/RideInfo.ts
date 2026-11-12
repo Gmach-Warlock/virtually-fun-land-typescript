@@ -55,4 +55,10 @@ export class RideInfo {
   set occupancy(newOccupancy) {
     this.#occupancy = newOccupancy;
   }
+
+  log() {
+    console.log(
+      `The ${this.#ride.info?.name ?? ""} is a ${this.#ride.info?.type} ride. It is ${this.#ride.timer?.duration} minutes long and ${this.#ride.info?.occupancy} is the amount of people who ride each time.`,
+    );
+  }
 }

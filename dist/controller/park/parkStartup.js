@@ -2,7 +2,7 @@ import { vfl } from "../../model/park/Park.js";
 import { vflCounters } from "../../model/park/ParkCounters.js";
 import { vflQueues } from "../../model/park/ParkQueues.js";
 import { vflTimers } from "../../model/park/ParkTimers.js";
-import { openParkBanner } from "../prompts/opening/openBanner.js";
+import { openingGates, openParkBanner, } from "../prompts/opening/openPrompts.js";
 export function buildPark() {
     const buildObj = {
         park: vfl,
@@ -14,6 +14,7 @@ export function buildPark() {
 }
 export function openPark() {
     openParkBanner();
+    openingGates();
 }
 export function initializePark() {
     buildPark();

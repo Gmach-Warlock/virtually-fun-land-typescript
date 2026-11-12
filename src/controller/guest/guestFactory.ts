@@ -7,6 +7,8 @@ import {
 } from "../rng/statHelpers.js";
 import { randomizeArr, pullRandomAmount } from "../rng/rngHelpers.js";
 import { theRegulars, randomGuests } from "../../assets/guestPools.js";
+import type { GuestObj } from "../../types/guestInterface.js";
+import { vflRides } from "../../model/park/ParkRides.js";
 
 export function createOpeningCrowdNames() {
   const regulars = randomizeArr(theRegulars) ?? [];
@@ -30,4 +32,8 @@ export function createGuest(name: string) {
     status: newGStatus,
     personality: newGPersonalit,
   };
+}
+
+export function hydrateGuest(guestObj: GuestObj) {
+  // need to make polymorphic methods everywhere!!;
 }

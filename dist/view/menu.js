@@ -1,5 +1,5 @@
 import { getNumericInput } from "../controller/inputs/getInputs.js";
-import { openingGreeting, openingMenu, } from "../controller/prompts/opening/openBanner.js";
+import { openingGreeting, openingMenu, } from "../controller/prompts/opening/openPrompts.js";
 import { rl } from "../controller/inputs/getInputs.js";
 export function respondToMainMenu(answer) {
     console.log("respondToMainMenu", answer);

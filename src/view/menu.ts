@@ -2,7 +2,7 @@ import { getNumericInput } from "../controller/inputs/getInputs.js";
 import {
   openingGreeting,
   openingMenu,
-} from "../controller/prompts/opening/openBanner.js";
+} from "../controller/prompts/opening/openPrompts.js";
 import { rl } from "../controller/inputs/getInputs.js";
 export function respondToMainMenu(answer: number) {
   console.log("respondToMainMenu", answer);

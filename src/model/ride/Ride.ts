@@ -42,4 +42,10 @@ export class Ride {
   set queue(newQueue) {
     this.#queue = newQueue;
   }
+
+  log() {
+    console.log(
+      `The ${this.#info?.name ?? ""} is a ${this.#info?.type} ride. It is ${this.#timer?.duration} minutes long and ${this.#info?.occupancy} is the amount of people who ride each time.`,
+    );
+  }
 }

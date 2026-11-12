@@ -22,4 +22,8 @@ export class GuestPersonality {
   set type(newtype) {
     this.#type = newtype;
   }
+
+  log() {
+    console.log(`${this.#guest.name} is a ${this.#type}`);
+  }
 }

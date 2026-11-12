@@ -2,11 +2,9 @@ import {
   addItemToArray,
   removeItemFromArray,
 } from "../../controller/crud/CRUDHelpers.js";
+import type { BasicNotify } from "../../types/basicTypes.js";
 import type { Guest } from "./Guest.js";
 
-function logGuest(guest: Guest) {
-  console.log(`Guest: ${guest.name}`);
-}
 export class GuestList {
   #guests: Guest[];
 
@@ -29,7 +27,9 @@ export class GuestList {
       removeItemFromArray(this.#guests, guest, "name", guest.name) ?? [];
   }
 
-  log() {
-    this.#guests.forEach((guest: Guest) => logGuest(guest));
+  log(type: BasicNotify) {
+    if (type === "initialize")
+      console.log(`A decent crowd has shown up at the park openening today!`);
+    this.#guests.forEach((guest: Guest) => guest.log(type));
   }
 }

@@ -30,4 +30,8 @@ export class Rider {
   set next(newNext) {
     this.#next = newNext;
   }
+
+  log() {
+    console.log(`${this.#guest.name} is a rider on ${this.ride.info?.name}`);
+  }
 }
