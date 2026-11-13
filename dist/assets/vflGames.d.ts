@@ -1,4 +1,4 @@
-import type { GameInfoObj } from "../types/gameInterfaces.js";
+import type { GameInfoObj } from "../types/game/gameInterfaces.js";
 export declare const fightSite: GameInfoObj;
 export declare const lizardSpock: GameInfoObj;
 export declare const vflGamesArr: GameInfoObj[];

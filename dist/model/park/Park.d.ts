@@ -1,4 +1,4 @@
-import type { ParkBuilder } from "../../types/basicInterfaces.js";
+import type { ParkBuilder } from "../../types/basic/basicInterfaces.js";
 export declare class Park {
     #private;
     constructor();

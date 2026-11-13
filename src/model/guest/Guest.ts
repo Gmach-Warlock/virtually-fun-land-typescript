@@ -1,4 +1,3 @@
-import type { BasicNotify } from "../../types/basicTypes.js";
 import type { GuestStatus } from "./GuestStatus.js";
 import type { GuestPersonality } from "./GuestPersonality.js";
 

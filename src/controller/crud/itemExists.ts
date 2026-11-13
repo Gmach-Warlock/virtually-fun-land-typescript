@@ -1,4 +1,4 @@
-import type { AllType } from "../../types/basicTypes.js";
+import type { AllType } from "../../types/basic/basicTypes.js";
 
 export function itemExistsInArray<type>(arr: type[], itm: type) {
   if (!arr.some((item) => item === itm)) {

@@ -1,4 +1,4 @@
-import type { GameInfoObj } from "../types/gameInterfaces.js";
+import type { GameInfoObj } from "../types/game/gameInterfaces.js";
 
 export const fightSite: GameInfoObj = {
   id: "FightSite-game-1",

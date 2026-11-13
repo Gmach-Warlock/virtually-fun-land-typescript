@@ -1,7 +1,7 @@
-import { Game } from "../model/game/Game.js";
-import type { GameContestants } from "../model/game/GameContestants.js";
-import type { GameCounter } from "../model/game/GameCounter.js";
-import { GameInfo } from "../model/game/GameInfo.js";
+import { Game } from "../../model/game/Game.js";
+import type { GameContestants } from "../../model/game/GameContestants.js";
+import type { GameCounter } from "../../model/game/GameCounter.js";
+import { GameInfo } from "../../model/game/GameInfo.js";
 
 export interface GameInfoObj {
   id: string;

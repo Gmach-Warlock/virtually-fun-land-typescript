@@ -7,7 +7,7 @@ import {
 } from "../rng/statHelpers.js";
 import { randomizeArr, pullRandomAmount } from "../rng/rngHelpers.js";
 import { theRegulars, randomGuests } from "../../assets/guestPools.js";
-import type { GuestObj } from "../../types/guestInterface.js";
+import type { GuestObj } from "../../types/guest/guestInterface.js";
 import { vflGuestList } from "../../model/guest/GuestList.js";
 import { addToInstance } from "../crud/instanceCRUDhelp.js";
 

@@ -1,6 +1,6 @@
 import { Park } from "../park/Park.js";
 import type { Guest } from "./Guest.js";
-import type { BasicNotify } from "../../types/basicTypes.js";
+import type { BasicNotify } from "../../types/basic/basicTypes.js";
 export declare class GuestList {
     #private;
     constructor();

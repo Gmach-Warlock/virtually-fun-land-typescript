@@ -1,5 +1,5 @@
 import { addItemToArray } from "../../controller/crud/CRUDHelpers.js";
-import type { Personality } from "../../types/GuestTypes.js";
+import type { Personality } from "../../types/guest/guestTypes.js";
 import type { Guest } from "./Guest.js";
 import { vflGuestList, type GuestList } from "./GuestList.js";
 

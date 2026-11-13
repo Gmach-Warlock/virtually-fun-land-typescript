@@ -4,7 +4,7 @@ import {
   itemExistsByKeyValue,
   itemExistsInArray,
 } from "../../controller/crud/itemExists.js";
-import type { AllType, Basic } from "../../types/basicTypes.js";
+import type { AllType, Basic } from "../../types/basic/basicTypes.js";
 
 describe("itemExistsInArray", () => {
   it("should return false if the item doesn't exist in the array", () => {

@@ -1,6 +1,7 @@
 import { mainMenu } from "../../view/menu.js";
 import { buildGames } from "../game/gameBuild.js";
 import { buildGuests, formRideLines, splitGuests } from "../guest/guestSeed.js";
+import { logRush } from "../guest/openingGuests.js";
 import { buildRides } from "../ride/createRides.js";
 import { buildStartup } from "./parkStartup.js";
 export function startParkChain(interval = 1000) {
@@ -15,6 +16,7 @@ export function startParkChain(interval = 1000) {
     }, interval * 2);
     setTimeout(() => {
         formRideLines();
+        logRush();
     }, interval * 3);
     setTimeout(() => {
         mainMenu();

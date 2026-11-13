@@ -1,16 +1,22 @@
 import type { Guest } from "../guest/Guest.js";
 import type { Ride } from "./Ride.js";
 import { Rider } from "./Rider.js";
-import { createRider } from "../../controller/ride/rideHelpers.js";
+import {
+  createRider,
+  dequeuHelper,
+} from "../../controller/ride/rideHelpers.js";
 export class RideQueue {
   #ride: Ride;
   #head: Rider | null;
   #tail: Rider | null;
-
+  #map: object | undefined;
+  #arr: Rider[] | undefined;
   constructor(ride: Ride) {
     this.#ride = ride;
     this.#head = null;
     this.#tail = null;
+    this.#map = new Map();
+    this.#arr = [];
   }
 
   get ride() {
@@ -31,17 +37,24 @@ export class RideQueue {
   set tail(newTail: Rider | null) {
     this.#tail = newTail;
   }
+  get map() {
+    return this.#map;
+  }
+  set map(newMap: object | undefined) {
+    this.#map = newMap;
+  }
+  get arr() {
+    return this.#arr;
+  }
+  set arr(newArr) {
+    this.#arr = newArr;
+  }
 
   dequeue() {
-    const counter = this.#ride.counter;
-    if (!counter) return;
-    if (this.#head === null) {
-      console.log(`The line is currently empty. `);
-      return;
-    }
-    this.#head = this.#head?.next;
-    counter.count -= 1;
-    console.log(`${this.#head} has gotten off of the ${this.#ride.info.name}`);
+    dequeuHelper(this.#ride);
+    console.log(
+      `${this.#head?.guest.name} is now waiting in line for ${this.#ride.info.name}`,
+    );
   }
   enqueue(guest: Guest) {
     const counter = this.#ride.counter;
@@ -79,10 +92,25 @@ export class RideQueue {
   }
 
   log() {
+    /* let string = "";
     let current: Rider | null = this.#head;
     while (current) {
-      console.log(`Guest: ${current.guest.name}`);
-      current = current.next as Rider | null;
+      if (current === this.#head) {
+        string += current.guest.name;
+      }
+      if (current.next === null || current.next === undefined) {
+        string += `, and ${current.guest.name}`;
+      }
+      if (
+        current !== this.#head &&
+        current.next !== null &&
+        current.next !== undefined
+      ) {
+        string += `${current.guest.name}`;
+        current = current.next as Rider | null;
+      }
     }
+    console.log(`${string} have gotten in line for ${this.#ride.info.name}`);
+   */
   }
 }

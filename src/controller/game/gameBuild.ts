@@ -5,7 +5,10 @@ import { GameCounter } from "../../model/game/GameCounter.js";
 import { GameInfo } from "../../model/game/GameInfo.js";
 import { vflGames } from "../../model/park/ParkGames.js";
 import { vflPlayersClub } from "../../model/park/ParkPlayers.js";
-import type { GameHubObj, GameInfoObj } from "../../types/gameInterfaces.js";
+import type {
+  GameHubObj,
+  GameInfoObj,
+} from "../../types/game/gameInterfaces.js";
 
 export function createGameHub(infoObj: GameInfoObj) {
   const newGame = new Game(infoObj.id);

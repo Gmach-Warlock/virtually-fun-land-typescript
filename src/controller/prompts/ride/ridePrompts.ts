@@ -1,4 +1,4 @@
-import type { SimpleObj } from "../../../types/basicTypes.js";
+import type { SimpleObj } from "../../../types/basic/basicTypes.js";
 
 export function ridePrompts(type: string) {
   const lookup: SimpleObj = {

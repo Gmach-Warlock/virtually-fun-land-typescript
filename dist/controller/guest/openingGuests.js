@@ -1,16 +1,8 @@
-import { createGuest, createOpeningCrowdNames } from "./guestFactory.js";
-function createGroup(arr) {
-    const group = arr.map((name) => {
-        createGuest(name);
+import { vflRides } from "../../model/park/ParkRides.js";
+export function logRush() {
+    console.log(`The guests race towards their favorite attractions!.`);
+    vflRides.rides.forEach((ride) => {
+        console.log(ride.queue?.log());
     });
-    return group;
-}
-function createOpeningCrowd(openingCrowd = createOpeningCrowdNames()) {
-    const regulars = createGroup(openingCrowd.regulars);
-    const randoms = createGroup(openingCrowd.randoms);
-    return { regulars, randoms };
-}
-export function seedOpeningCrowd(openingCrowd = createOpeningCrowdNames()) {
-    const crowd = createOpeningCrowd(openingCrowd);
 }
 //# sourceMappingURL=openingGuests.js.map

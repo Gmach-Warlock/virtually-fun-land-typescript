@@ -1,4 +1,4 @@
-import type { Subscription } from "../../types/basicTypes.js";
+import type { Subscription } from "../../types/basic/basicTypes.js";
 export declare class Subscriber {
     #private;
     constructor(types: Subscription[]);

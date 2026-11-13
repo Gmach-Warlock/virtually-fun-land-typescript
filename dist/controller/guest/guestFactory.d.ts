@@ -1,7 +1,7 @@
 import { Guest } from "../../model/guest/Guest.js";
 import { GuestStatus } from "../../model/guest/GuestStatus.js";
 import { GuestPersonality } from "../../model/guest/GuestPersonality.js";
-import type { GuestObj } from "../../types/guestInterface.js";
+import type { GuestObj } from "../../types/guest/guestInterface.js";
 export declare function createOpeningCrowdNames(): {
     regulars: string[];
     randoms: string[];

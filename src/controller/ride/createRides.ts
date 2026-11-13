@@ -9,8 +9,10 @@ import { RideCounter } from "../../model/ride/RideCounter.js";
 import { RideInfo } from "../../model/ride/RideInfo.js";
 import { RideQueue } from "../../model/ride/RideQueue.js";
 import { RideTimer } from "../../model/ride/RideTimer.js";
-import type { RideHubObj, RideInfoObj } from "../../types/rideInterfaces.js";
-
+import type {
+  RideHubObj,
+  RideInfoObj,
+} from "../../types/ride/rideInterfaces.js";
 export function createRideHub({
   id,
   name,

@@ -1,4 +1,4 @@
-import type { Personality } from "../../types/GuestTypes.js";
+import type { Personality } from "../../types/guest/guestTypes.js";
 import type { Guest } from "./Guest.js";
 import { type GuestList } from "./GuestList.js";
 export declare class GuestGroups {

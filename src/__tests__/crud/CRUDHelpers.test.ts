@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
 import { addItemToArray } from "../../controller/crud/CRUDHelpers.js";
-import type { Basic } from "../../types/basicTypes.js";
+import type { Basic } from "../../types/basic/basicTypes.js";
 
 describe("addItemToArray", () => {
   it("should add an item of any type to an array, and NOT mutate the original", () => {

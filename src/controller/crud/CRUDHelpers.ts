@@ -1,4 +1,4 @@
-import type { AllType } from "../../types/basicTypes.js";
+import type { AllType } from "../../types/basic/basicTypes.js";
 import { itemExistsByKeyValue, itemExistsInArray } from "./itemExists.js";
 
 export function addItemToArray<type>(arr: type[], itm: type) {

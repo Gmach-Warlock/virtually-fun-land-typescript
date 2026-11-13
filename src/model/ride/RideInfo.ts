@@ -1,4 +1,4 @@
-import type { RideType } from "../../types/RideTypes.js";
+import type { RideType } from "../../types/ride/rideTypes.js";
 import type { Ride } from "./Ride.js";
 
 export class RideInfo {

@@ -1,4 +1,7 @@
-import type { GuestLocation, GuestStatusType } from "../../types/GuestTypes.js";
+import type {
+  GuestLocation,
+  GuestStatusType,
+} from "../../types/guest/guestTypes.js";
 import type { Guest } from "./Guest.js";
 
 export class GuestStatus {

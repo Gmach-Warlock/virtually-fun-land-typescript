@@ -1,23 +1,9 @@
-import type { CrowdNames } from "../../types/guestInterface.js";
-import { createGuest, createOpeningCrowdNames } from "./guestFactory.js";
+import { vflRides } from "../../model/park/ParkRides.js";
+import type { Ride } from "../../model/ride/Ride.js";
 
-function createGroup(arr: string[]) {
-  const group = arr.map((name) => {
-    createGuest(name);
+export function logRush() {
+  console.log(`The guests race towards their favorite attractions!.`);
+  vflRides.rides.forEach((ride: Ride) => {
+    console.log(ride.queue?.log());
   });
-  return group;
-}
-
-function createOpeningCrowd(
-  openingCrowd: CrowdNames = createOpeningCrowdNames(),
-) {
-  const regulars = createGroup(openingCrowd.regulars);
-  const randoms = createGroup(openingCrowd.randoms);
-  return { regulars, randoms };
-}
-
-export function seedOpeningCrowd(
-  openingCrowd: CrowdNames = createOpeningCrowdNames(),
-) {
-  const crowd = createOpeningCrowd(openingCrowd);
 }

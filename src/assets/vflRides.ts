@@ -1,4 +1,4 @@
-import type { RideInfoObj } from "../types/rideInterfaces.js";
+import type { RideInfoObj } from "../types/ride/rideInterfaces.js";
 
 export const commandLineCoasterInfo: RideInfoObj = {
   id: "CommandLineCoaster-coaster-1",

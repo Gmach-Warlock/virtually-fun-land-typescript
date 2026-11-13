@@ -1,4 +1,4 @@
-import type { RideInfoObj } from "../types/rideInterfaces.js";
+import type { RideInfoObj } from "../types/ride/rideInterfaces.js";
 export declare const commandLineCoasterInfo: RideInfoObj;
 export declare const frozenChannelInfo: RideInfoObj;
 export declare const multiThreadedProcessorInfo: RideInfoObj;

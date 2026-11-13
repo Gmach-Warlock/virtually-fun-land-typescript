@@ -10,6 +10,10 @@ export declare class RideQueue {
     set head(newHead: Rider | null);
     get tail(): Rider | null;
     set tail(newTail: Rider | null);
+    get map(): object | undefined;
+    set map(newMap: object | undefined);
+    get arr(): Rider[] | undefined;
+    set arr(newArr: Rider[] | undefined);
     dequeue(): void;
     enqueue(guest: Guest): void;
     jump(guest: Guest): void;

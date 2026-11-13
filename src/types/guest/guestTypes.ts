@@ -4,10 +4,12 @@ export type GuestCurrentStatus =
   | "waiting"
   | "riding"
   | "playing"
-  | "roaming";
+  | "roaming"
+  | "watching";
 export type GuestStatusType =
   | "entering"
   | "wandering"
+  | "watching"
   | "playing"
   | "waiting"
   | "riding"
