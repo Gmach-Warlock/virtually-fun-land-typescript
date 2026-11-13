@@ -18,12 +18,17 @@ export function buildPark() {
   vfl.build(buildObj);
 }
 
-export function openPark() {
+export function buildPrompts() {
   openParkBanner();
   openingGates();
 }
 
+export function buildStartup() {
+  buildPark();
+  buildPrompts();
+}
+
 export function initializePark() {
   buildPark();
-  openPark();
+  buildPrompts();
 }

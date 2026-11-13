@@ -11,6 +11,7 @@ export declare class Park {
     set timers(newTimers: ParkBuilder["timers"] | undefined);
     static getInstance(): Park;
     build(buildObj: ParkBuilder): void;
+    log(): void;
 }
 export declare const vfl: Park;
 //# sourceMappingURL=Park.d.ts.map

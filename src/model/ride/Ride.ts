@@ -2,7 +2,6 @@ import type { RideInfo } from "./RideInfo.js";
 import type { RideCounter } from "./RideCounter.js";
 import type { RideQueue } from "./RideQueue.js";
 import type { RideTimer } from "./RideTimer.js";
-import type { RideInfoObj } from "../../types/rideInterfaces.js";
 
 export class Ride {
   #id: string;
@@ -18,7 +17,10 @@ export class Ride {
   get id() {
     return this.#id;
   }
-  get info() {
+  get info(): RideInfo {
+    if (!this.#info) {
+      throw new Error("Ride info has not been set.");
+    }
     return this.#info;
   }
   set info(newInfo) {
@@ -45,7 +47,10 @@ export class Ride {
 
   log() {
     console.log(
-      `The ${this.#info?.name ?? ""} is a ${this.#info?.type} ride. It is ${this.#timer?.duration} minutes long and ${this.#info?.occupancy} is the amount of people who ride each time.`,
+      `The ${this.#info?.name ?? ""} is a ${this.#info?.type}. 
+It is has a runtime of ${this.#timer?.duration} minutes 
+and ${this.#info?.occupancy} people ride each time.
+      `,
     );
   }
 }

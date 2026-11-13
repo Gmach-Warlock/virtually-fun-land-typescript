@@ -20,7 +20,7 @@ export const multiThreadedProcessorInfo = {
     id: "MultiThreadedProcessor-family-1",
     name: "Multi Threaded Processor",
     description: "A high flying adventure through a virtual command line interface!",
-    type: "Roller Coaster",
+    type: "Family Ride",
     duration: 1,
     max: 30,
     occupancy: 4,

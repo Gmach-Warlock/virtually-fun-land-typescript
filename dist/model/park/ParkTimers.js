@@ -1,3 +1,4 @@
+import { addItemToArray } from "../../controller/crud/CRUDHelpers.js";
 import { vfl } from "./Park.js";
 export class ParkTimers {
     #park;
@@ -24,6 +25,9 @@ export class ParkTimers {
             this.#instance = new ParkTimers();
         }
         return this.#instance;
+    }
+    add(timer) {
+        this.#timers = addItemToArray(this.#timers ?? [], timer);
     }
 }
 export const vflTimers = ParkTimers.getInstance();

@@ -4,9 +4,9 @@ import { ParkQueues } from "../model/park/ParkQueues.js";
 import { ParkTimers } from "../model/park/ParkTimers.js";
 export interface CRUDableInstance<T> {
     add(value: T): void;
-    remove(value: T): void;
-    update(value: T): void;
-    delete(value: T): void;
+    remove?(value: T): void;
+    update?(value: T): void;
+    delete?(value: T): void;
     log?(): void;
 }
 export interface LoggableInstane<T> {

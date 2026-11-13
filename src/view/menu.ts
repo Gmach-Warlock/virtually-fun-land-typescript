@@ -5,7 +5,6 @@ import {
 } from "../controller/prompts/opening/openPrompts.js";
 import { rl } from "../controller/inputs/getInputs.js";
 export function respondToMainMenu(answer: number) {
-  console.log("respondToMainMenu", answer);
   const lookup: any = {
     1: () => {
       console.log(`Coming soon`);

@@ -1,11 +1,13 @@
-import type { Park } from "./Park.js";
+import type { RideCounter } from "../ride/RideCounter.js";
+import { type Park } from "./Park.js";
 export declare class ParkCounters {
     #private;
     constructor();
     get park(): Park | undefined;
-    get counters(): ParkCounters[] | undefined;
-    set counters(newCounters: ParkCounters[] | undefined);
+    get counters(): RideCounter[] | undefined;
+    set counters(newCounters: RideCounter[] | undefined);
     static getInstance(): ParkCounters;
+    add(counter: RideCounter): void;
 }
 export declare const vflCounters: ParkCounters;
 //# sourceMappingURL=ParkCounters.d.ts.map

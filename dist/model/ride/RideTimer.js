@@ -17,5 +17,8 @@ export class RideTimer {
     set duration(newDuration) {
         this.#duration = newDuration;
     }
+    log() {
+        console.log(`The ${this.#ride.info?.name} has a runtime of ${this.duration}`);
+    }
 }
 //# sourceMappingURL=RideTimer.js.map

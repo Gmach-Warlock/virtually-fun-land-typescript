@@ -1,3 +1,5 @@
+import { Rider } from "./Rider.js";
+import { createRider } from "../../controller/ride/rideHelpers.js";
 export class RideQueue {
     #ride;
     #head;
@@ -24,6 +26,54 @@ export class RideQueue {
     }
     set tail(newTail) {
         this.#tail = newTail;
+    }
+    dequeue() {
+        const counter = this.#ride.counter;
+        if (!counter)
+            return;
+        if (this.#head === null) {
+            console.log(`The line is currently empty. `);
+            return;
+        }
+        this.#head = this.#head?.next;
+        counter.count -= 1;
+        console.log(`${this.#head} has gotten off of the ${this.#ride.info.name}`);
+    }
+    enqueue(guest) {
+        const counter = this.#ride.counter;
+        if (!counter)
+            return;
+        if (counter.count >= counter.max) {
+            console.log(`The line is currently full. Please try again later. `);
+            return;
+        }
+        const newRider = createRider(this.#ride, guest);
+        if (this.#head === null && this.#tail === null) {
+            this.#head = newRider;
+            this.#tail = newRider;
+        }
+        if (this.#tail !== null && this.#tail !== null) {
+            const temp = this.#tail;
+            this.#tail = newRider;
+            temp.next = newRider;
+        }
+        counter.count += 1;
+        console.log(`${guest.name} has gotten in line for ${this.#ride.info.name}`);
+    }
+    jump(guest) {
+        const counter = this.#ride.counter?.count;
+        if (!counter)
+            return;
+        const newRider = createRider(this.#ride, guest);
+        if (this.#head === null && this.#tail === null) {
+            this.#head = newRider;
+            this.#tail = newRider;
+        }
+        if (this.#head !== null && this.#tail !== null) {
+            const temp = this.#head;
+            this.#head = newRider;
+            newRider.next = temp;
+        }
     }
     log() {
         let current = this.#head;

@@ -1,8 +1,10 @@
+import { addItemToArray } from "../../controller/crud/CRUDHelpers.js";
+import type { RideQueue } from "../ride/RideQueue.js";
 import { vfl, type Park } from "./Park.js";
 
 export class ParkQueues {
   #park: Park | undefined;
-  #queues: ParkQueues[] | undefined;
+  #queues: RideQueue[] | undefined;
   static #instance: ParkQueues | null = null;
 
   constructor() {
@@ -28,6 +30,15 @@ export class ParkQueues {
       this.#instance = new ParkQueues();
     }
     return this.#instance;
+  }
+  add(queue: RideQueue) {
+    this.#queues = addItemToArray(this.#queues ?? [], queue);
+  }
+  log() {
+    console.log(`Here is a list of the rides and their lines`);
+    this.#queues?.forEach((queue: RideQueue) => {
+      console.log(`${queue.ride.info.name}`);
+    });
   }
 }
 

@@ -25,5 +25,8 @@ export class RideCounter {
     set max(newMax) {
         this.#max = newMax;
     }
+    log() {
+        console.log(`The ${this.ride.info?.name} currently has ${this.#count} many people waiting. The max amount is ${this.#max}`);
+    }
 }
 //# sourceMappingURL=RideCounter.js.map

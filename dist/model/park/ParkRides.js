@@ -1,3 +1,4 @@
+import { addItemToArray } from "../../controller/crud/CRUDHelpers.js";
 import { vfl } from "./Park.js";
 export class ParkRides {
     #park;
@@ -24,6 +25,15 @@ export class ParkRides {
             this.#instance = new ParkRides();
         }
         return this.#instance;
+    }
+    add(ride) {
+        this.#rides = addItemToArray(this.#rides, ride);
+    }
+    log() {
+        console.log(`
+Virtually Fun Land's rides are now up and running with expected wait times!
+    `);
+        this.#rides.forEach((ride) => ride.log());
     }
 }
 export const vflRides = ParkRides.getInstance();

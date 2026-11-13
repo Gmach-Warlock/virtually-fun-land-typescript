@@ -7,7 +7,8 @@ export declare class Rider {
     set ride(newRide: Ride);
     get guest(): Guest;
     set guest(newGuest: Guest);
-    get next(): Guest | null;
-    set next(newNext: Guest | null);
+    get next(): Rider | null;
+    set next(newNext: Rider | null);
+    log(): void;
 }
 //# sourceMappingURL=Rider.d.ts.map

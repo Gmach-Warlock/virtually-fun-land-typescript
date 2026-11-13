@@ -1,8 +1,10 @@
+import { addItemToArray } from "../../controller/crud/CRUDHelpers.js";
+import type { RideTimer } from "../ride/RideTimer.js";
 import { vfl, type Park } from "./Park.js";
 
 export class ParkTimers {
   #park: Park | undefined;
-  #timers: ParkTimers[] | undefined;
+  #timers: RideTimer[] | undefined;
   static #instance: ParkTimers | null = null;
 
   constructor() {
@@ -28,6 +30,9 @@ export class ParkTimers {
       this.#instance = new ParkTimers();
     }
     return this.#instance;
+  }
+  add(timer: RideTimer) {
+    this.#timers = addItemToArray(this.#timers ?? [], timer);
   }
 }
 

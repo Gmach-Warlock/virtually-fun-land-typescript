@@ -4,14 +4,12 @@ export class RideInfo {
     #description;
     #type;
     #occupancy;
-    #duration;
-    constructor(ride, name, description, type, duration, occupancy) {
+    constructor(ride, name, description, type, occupancy) {
         this.#ride = ride;
         this.#name = name;
         this.#description = description;
         this.#occupancy = occupancy;
         this.#type = type;
-        this.#duration = duration;
     }
     get ride() {
         return this.#ride;
@@ -42,6 +40,9 @@ export class RideInfo {
     }
     set occupancy(newOccupancy) {
         this.#occupancy = newOccupancy;
+    }
+    log() {
+        console.log(`The ${this.#ride.info?.name ?? ""} is a ${this.#ride.info?.type} ride. It is ${this.#ride.timer?.duration} minutes long and ${this.#ride.info?.occupancy} is the amount of people who ride each time.`);
     }
 }
 //# sourceMappingURL=RideInfo.js.map

@@ -8,6 +8,8 @@ export declare class ParkRides {
     get rides(): Ride[];
     set rides(newRides: Ride[]);
     static getInstance(): ParkRides;
+    add(ride: Ride): void;
+    log(): void;
 }
 export declare const vflRides: ParkRides;
 //# sourceMappingURL=ParkRides.d.ts.map

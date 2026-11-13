@@ -7,14 +7,12 @@ export class RideInfo {
   #description: string;
   #type: RideType;
   #occupancy: number;
-  #duration: number;
 
   constructor(
     ride: Ride,
     name: string,
     description: string,
     type: RideType,
-    duration: number,
     occupancy: number,
   ) {
     this.#ride = ride;
@@ -22,7 +20,6 @@ export class RideInfo {
     this.#description = description;
     this.#occupancy = occupancy;
     this.#type = type;
-    this.#duration = duration;
   }
 
   get ride() {

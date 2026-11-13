@@ -6,5 +6,6 @@ export declare class RideTimer {
     set ride(newRide: Ride);
     get duration(): number;
     set duration(newDuration: number);
+    log(): void;
 }
 //# sourceMappingURL=RideTimer.d.ts.map

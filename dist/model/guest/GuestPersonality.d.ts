@@ -7,5 +7,6 @@ export declare class GuestPersonality {
     set guest(newGuest: Guest);
     get type(): Personality;
     set type(newtype: Personality);
+    log(): void;
 }
 //# sourceMappingURL=GuestPersonality.d.ts.map

@@ -1,10 +1,11 @@
-import type { Personality } from "../../types/GuestTypes.js";
-import { logGuest } from "../../controller/prompts/guest/guestHelpers.js";
 import type { BasicNotify } from "../../types/basicTypes.js";
+import type { GuestStatus } from "./GuestStatus.js";
+import type { GuestPersonality } from "./GuestPersonality.js";
 
 export class Guest {
   #name: string;
-  #personality: Personality | undefined;
+  #personality: GuestPersonality | undefined;
+  #status: GuestStatus | undefined;
 
   constructor(name: string) {
     this.#name = name;
@@ -16,14 +17,20 @@ export class Guest {
   set name(newName: string) {
     this.#name = newName;
   }
-  get personality(): Personality | undefined {
-    if (this.#personality) return this.#personality;
+  get personality(): GuestPersonality | undefined {
+    return this.#personality;
   }
-  set personality(newPersonality: Personality) {
+  set personality(newPersonality: GuestPersonality | undefined) {
     this.#personality = newPersonality;
   }
+  get status() {
+    return this.#status;
+  }
+  set status(newStatus: GuestStatus | undefined) {
+    this.#status = newStatus;
+  }
 
-  log(type: BasicNotify) {
-    logGuest(type, this);
+  log() {
+    console.log("Finish buddy");
   }
 }

@@ -4,7 +4,7 @@ import type { Ride } from "./Ride.js";
 export class Rider {
   #ride: Ride;
   #guest: Guest;
-  #next: Guest | null;
+  #next: Rider | null;
 
   constructor(ride: Ride, guest: Guest) {
     this.#ride = ride;

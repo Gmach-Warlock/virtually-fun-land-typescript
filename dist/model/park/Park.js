@@ -39,6 +39,9 @@ export class Park {
         this.#timers = buildObj.timers;
         this.#queues = buildObj.queues;
     }
+    log() {
+        console.log(`The park is open from 8am to 9pm Monday through Friday and 8am to 10pm on the weekend.`);
+    }
 }
 export const vfl = Park.getInstance();
 //# sourceMappingURL=Park.js.map

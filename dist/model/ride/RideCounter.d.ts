@@ -8,5 +8,6 @@ export declare class RideCounter {
     set count(newCount: number);
     get max(): number;
     set max(newMax: number);
+    log(): void;
 }
 //# sourceMappingURL=RideCounter.d.ts.map

@@ -11,6 +11,9 @@ export class Ride {
         return this.#id;
     }
     get info() {
+        if (!this.#info) {
+            throw new Error("Ride info has not been set.");
+        }
         return this.#info;
     }
     set info(newInfo) {
@@ -33,6 +36,12 @@ export class Ride {
     }
     set queue(newQueue) {
         this.#queue = newQueue;
+    }
+    log() {
+        console.log(`The ${this.#info?.name ?? ""} is a ${this.#info?.type}. 
+It is has a runtime of ${this.#timer?.duration} minutes 
+and ${this.#info?.occupancy} people ride each time.
+      `);
     }
 }
 //# sourceMappingURL=Ride.js.map
