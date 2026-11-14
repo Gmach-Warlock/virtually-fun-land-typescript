@@ -1,0 +1,1 @@
+{"version":3,"file":"iqueue.d.ts","sourceRoot":"","sources":["../../../src/types/queue/iqueue.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,MAAM,CAAC,CAAC;IACvB,IAAI,EAAE,CAAC,GAAG,IAAI,CAAC;IACf,IAAI,EAAE,CAAC,GAAG,IAAI,CAAC;IACf,OAAO,CAAC,CAAC,EAAE,CAAC,GAAG,IAAI,CAAC;IACpB,OAAO,IAAI,IAAI,CAAC;IAChB,IAAI,CAAC,CAAC,EAAE,CAAC,GAAG,IAAI,CAAC;CAClB"}
