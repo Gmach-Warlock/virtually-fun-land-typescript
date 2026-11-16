@@ -3,7 +3,6 @@ import { Game } from "../../model/Game.js";
 import { Show } from "../../model/Show.js";
 import { rideInfoArr } from "../../assets/vflRides.js";
 import { vflGamesArr } from "../../assets/vflGames.js";
-import { Queue } from "../../model/Queue.js";
 import { vflShowsArr } from "../../assets/vflShows.js";
 export function buildRides() {
     const rides = rideInfoArr.map((ride) => new Ride(ride.id, ride.name, ride.description, ride.category, ride.duration, ride.type, ride.perTurn, ride.max));

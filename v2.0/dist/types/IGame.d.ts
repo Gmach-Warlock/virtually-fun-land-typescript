@@ -1,18 +1,18 @@
-import type { IAttraction, IIdentify } from "./IAttractions.js";
-import type { IGuest } from "./IGuest.js";
-export interface IGame extends IAttraction {
+import type { Attraction, Identify } from "./AttractionsTypeDefs.js";
+import type { GuestInstance } from "./IGuest.js";
+export interface GameInstance extends Attraction {
 }
-export interface IScoreBoard {
+export interface ScoreBoard {
     highScore: number;
     currentScore: number;
 }
-export interface IPark extends IIdentify {
-    arrays: IParkArrays;
+export interface ParkInstance extends Identify {
+    arrays: ParkArrays;
 }
-export interface IParkArrays {
-    rides: IAttraction[];
-    games: IAttraction[];
-    shows: IAttraction[];
-    guests: IGuest[];
+export interface ParkArrays {
+    rides: Attraction[];
+    games: Attraction[];
+    shows: Attraction[];
+    guests: GuestInstance[];
 }
 //# sourceMappingURL=IGame.d.ts.map

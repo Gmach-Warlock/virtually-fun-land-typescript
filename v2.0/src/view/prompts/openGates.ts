@@ -1,3 +1,5 @@
+import { logAttractions } from "./attractionPrompts.js";
+
 function openParkBanner() {
   console.log(`
       <==It's that magical time: Opening Time!!!==>
@@ -28,4 +30,5 @@ function openingGates() {
 export function startGates() {
   openParkBanner();
   openingGates();
+  logAttractions();
 }

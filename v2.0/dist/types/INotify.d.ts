@@ -1,2 +1,2 @@
-export type IQueueNotify = "enqueue" | "dequeue" | "jump" | "leave";
+export type QueueNotify = "enqueue" | "dequeue" | "jump" | "leave";
 //# sourceMappingURL=INotify.d.ts.map

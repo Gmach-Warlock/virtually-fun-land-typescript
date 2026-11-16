@@ -1,7 +1,7 @@
-import type { IMetrics, IGeneral } from "../types/IAttractions.js";
-export interface IGameInfo extends IGeneral, IMetrics {
+import type { Metrics, GeneralInfo } from "../types/attractionsTypeDefs.js";
+export interface GameInfo extends GeneralInfo, Metrics {
 }
-export declare const fightSite: IGameInfo;
-export declare const lizardSpock: IGameInfo;
-export declare const vflGamesArr: IGameInfo[];
+export declare const fightSite: GameInfo;
+export declare const lizardSpock: GameInfo;
+export declare const vflGamesArr: GameInfo[];
 //# sourceMappingURL=vflGames.d.ts.map

@@ -2,10 +2,9 @@ import { Ride } from "../../model/Ride.js";
 import { Game } from "../../model/Game.js";
 import { Show } from "../../model/Show.js";
 import { rideInfoArr } from "../../assets/vflRides.js";
-import { vflGamesArr, type IGameInfo } from "../../assets/vflGames.js";
-import type { IAttraction, IRideInfo } from "../../types/IAttractions.js";
-import { Queue } from "../../model/Queue.js";
-import { vflShowsArr, type IShowInfo } from "../../assets/vflShows.js";
+import { vflGamesArr, type GameInfo } from "../../assets/vflGames.js";
+import type { RideInfo } from "../../types/attractionsTypeDefs.js";
+import { vflShowsArr, type ShowInfo } from "../../assets/vflShows.js";
 
 export function buildRides() {
   const rides = rideInfoArr.map(
@@ -55,4 +54,4 @@ export function buildShows() {
   );
   return shows;
 }
-export type IAttractionInfo = IRideInfo | IGameInfo | IShowInfo;
+export type AttractionInfo = RideInfo | GameInfo | ShowInfo;

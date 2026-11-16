@@ -1,20 +1,23 @@
-import {
-  dequeueHelper,
-  enqueueHelper,
-} from "../controller/queue/queueHelpers.js";
-import type { IAttraction } from "../types/IAttractions.js";
-import type { IGuest } from "../types/IGuest.js";
-import type { ILinkedChild, IQueue, IQueueObj } from "../types/IQueue.js";
+import { dequeueHelper } from "../controller/queue/queueHelpers.js";
+import type { Attraction } from "../types/attractionsTypeDefs.js";
+import type { GuestInstance } from "../types/guestTypeDefs.js";
+import type {
+  LinkedChild,
+  QueueInstance,
+  QueueObj,
+  WaitingGuest,
+} from "../types/queuTypeDefs.ts.js";
+import { logLine } from "../view/prompts/logLines.js";
 
-export class Queue implements IQueue<IGuest | null> {
-  attraction: IAttraction;
-  arr: IQueueObj[];
-  map: Map<string, IQueueObj>;
-  head: IQueueObj | null;
-  tail: IQueueObj | null;
-  vipMark: IQueueObj | null;
+export class Queue implements QueueInstance<WaitingGuest | null> {
+  attraction: Attraction;
+  arr: QueueObj[];
+  map: Map<string, QueueObj>;
+  head: WaitingGuest | null;
+  tail: WaitingGuest | null;
+  vipMark: WaitingGuest | null;
 
-  constructor(attraction: IAttraction) {
+  constructor(attraction: Attraction) {
     this.attraction = attraction;
     this.arr = [];
     this.map = new Map();
@@ -23,20 +26,33 @@ export class Queue implements IQueue<IGuest | null> {
     this.vipMark = null;
   }
 
-  enqueue(guest: IQueueObj): void {
-    if (this.head === null || this.tail === null) return;
-    enqueueHelper(guest, this.head, this.tail);
+  enqueue(guest: WaitingGuest): void {
+    if (this.head === null || this.tail === null) {
+      this.head = guest;
+      this.tail = guest;
+      return;
+    }
+    if (this.head !== null && this.tail !== null) {
+      const temp = this.tail;
+      this.tail = guest;
+      if (temp) temp.next = guest;
+    }
+    this.arr.push(guest);
   }
-  dequeue(): ILinkedChild<IGuest | null> {
+  dequeue(): LinkedChild<GuestInstance | null> {
     if (this.head === null && this.tail === null) {
       console.log(`Nobody left in line for ${this.attraction.general.name}`);
-      return null as unknown as ILinkedChild<IGuest | null>;
+      return null as unknown as LinkedChild<GuestInstance | null>;
     }
     const dequeud = dequeueHelper(
       this.head,
       this.tail,
-    ) as ILinkedChild<IGuest | null>;
+    ) as LinkedChild<GuestInstance | null>;
     return dequeud;
   }
-  jump(item: IGuest | null): void {}
+  jump(item: WaitingGuest | null): void {}
+
+  log() {
+    logLine(this);
+  }
 }

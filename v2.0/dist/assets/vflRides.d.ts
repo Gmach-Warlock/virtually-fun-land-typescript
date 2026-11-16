@@ -1,6 +1,6 @@
-import type { IRideInfo } from "../types/IAttractions.js";
-export declare const commandLineCoasterInfo: IRideInfo;
-export declare const frozenChannelInfo: IRideInfo;
-export declare const multiThreadedProcessorInfo: IRideInfo;
-export declare const rideInfoArr: IRideInfo[];
+import type { RideInfo } from "../types/attractionsTypeDefs.js";
+export declare const commandLineCoasterInfo: RideInfo;
+export declare const frozenChannelInfo: RideInfo;
+export declare const multiThreadedProcessorInfo: RideInfo;
+export declare const rideInfoArr: RideInfo[];
 //# sourceMappingURL=vflRides.d.ts.map

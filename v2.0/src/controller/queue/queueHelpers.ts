@@ -1,9 +1,9 @@
-import type { IQueueObj } from "../../types/IQueue.js";
+import type { QueueObj } from "../../types/queuTypeDefs.ts.js";
 
 export function enqueueHelper(
-  guest: IQueueObj,
-  head: IQueueObj,
-  tail: IQueueObj,
+  guest: QueueObj,
+  head: QueueObj,
+  tail: QueueObj,
 ): void {
   if (head === null && tail === null) {
     head = guest;
@@ -18,9 +18,9 @@ export function enqueueHelper(
 }
 
 export function dequeueHelper(
-  head: IQueueObj | null,
-  tail: IQueueObj | null,
-): IQueueObj | null {
+  head: QueueObj | null,
+  tail: QueueObj | null,
+): QueueObj | null {
   if (head === null || tail === null) {
     console.log(`There is nobody left in line`);
     return null;

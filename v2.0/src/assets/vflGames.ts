@@ -1,8 +1,8 @@
-import type { IAttraction, IMetrics, IGeneral } from "../types/IAttractions.js";
+import type { Metrics, GeneralInfo } from "../types/attractionsTypeDefs.js";
 
-export interface IGameInfo extends IGeneral, IMetrics {}
+export interface GameInfo extends GeneralInfo, Metrics {}
 
-export const fightSite: IGameInfo = {
+export const fightSite: GameInfo = {
   id: "FightSite-game-1",
   name: "Fight Site",
   description:
@@ -14,7 +14,7 @@ export const fightSite: IGameInfo = {
   type: "game",
 };
 
-export const lizardSpock: IGameInfo = {
+export const lizardSpock: GameInfo = {
   id: "LizardSpock-game-2",
   name: "Lizard Spock on the Rocks",
   description:
@@ -26,4 +26,4 @@ export const lizardSpock: IGameInfo = {
   type: "game",
 };
 
-export const vflGamesArr: IGameInfo[] = [fightSite, lizardSpock];
+export const vflGamesArr: GameInfo[] = [fightSite, lizardSpock];

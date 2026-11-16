@@ -1,21 +1,31 @@
-import type { IIdentify } from "./IAttractions.js";
-export type TPersonality = "rider" | "gamer" | "watcher" | "wanderer";
-export type TGeneralLocation = "Entrance" | "Exit" | "Park Square";
-export type TGame = "Lizard Spock on a Rock" | "Fight Site";
-export type TRide = "Command Line Coaster" | "Frozen Channel" | "Multi Threaded Processor";
-export type TAttraction = TRide | TGame;
-export type TParkLocation = TGeneralLocation | TRide | TAttraction;
-export type TCurrently = "entering" | "leaving" | "waiting" | "playing" | "riding";
-export interface IGuestInfo extends IIdentify {
-    pType: TPersonality;
-    vip: boolean;
+import type { Identify } from "./attractionsTypeDefs.js";
+export type Personality = "rider" | "gamer" | "watcher" | "wanderer";
+export type GeneralLocation = "Entrance" | "Exit" | "Park Square";
+export type GameName = "Lizard Spock on a Rock" | "Fight Site";
+export type RideName =
+  | "Command Line Coaster"
+  | "Frozen Channel"
+  | "Multi Threaded Processor";
+export type ShowName = "Motherboard BIOS Show" | "Old Terminal Re-run";
+export type AttractionName = RideName | GameName | ShowName;
+export type ParkLocation = GeneralLocation | RideName | AttractionName;
+export type GuestCurrently =
+  | "initializing"
+  | "entering"
+  | "leaving"
+  | "waiting"
+  | "playing"
+  | "riding";
+export interface GuestInfo extends Identify {
+  pType: Personality;
+  vip: boolean;
 }
-export interface IGuestTracker {
-    pCurrently: TCurrently;
-    pLocation: TParkLocation;
+export interface GuestTracker {
+  pCurrently: GuestCurrently;
+  pLocation: ParkLocation;
 }
-export interface IGuest {
-    general: IGuestInfo;
-    track: IGuestTracker;
+export interface GuestInstance {
+  general: GuestInfo;
+  track: GuestTracker;
 }
 //# sourceMappingURL=IGuest.d.ts.map

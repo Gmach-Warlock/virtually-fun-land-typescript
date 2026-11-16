@@ -1,5 +1,5 @@
-import type { IGuest } from "../../types/IGuest.js";
-import type { IQueueNotify } from "../../types/INotify.js";
-import type { IQueue } from "../../types/IQueue.js";
-export declare function changePCurrently(queue: IQueue<IGuest>, guest: IGuest, reason: IQueueNotify): void;
+import type { GuestInstance } from "../../types/guestTypeDefs.js";
+import type { QueueNotify } from "../../types/notifyTypeDefs.js";
+import type { QueueInstance } from "../../types/queuTypeDefs.ts.js";
+export declare function changePCurrently(queue: QueueInstance<GuestInstance>, guest: GuestInstance, reason: QueueNotify): void;
 //# sourceMappingURL=trackerHelpers1.d.ts.map

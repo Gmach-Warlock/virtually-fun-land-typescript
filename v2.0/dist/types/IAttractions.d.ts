@@ -1,34 +1,34 @@
-import type { IGuest, TPersonality } from "./IGuest.js";
-import type { IQueue } from "./IQueue.js";
-export interface IIdentify {
+import type { GuestInstance, Personality } from "./IGuest.js";
+import type { QueueInstance } from "./IQueue.js";
+export interface Identify {
     id: string;
     name: string;
 }
-export interface IDescribe {
+export interface Describe {
     description: string;
 }
-export interface IMetrics {
+export interface Metrics {
     duration: number;
     perTurn: number;
     max: number;
 }
-export interface IRideInfo extends IGeneral, IMetrics {
+export interface RideInfo extends GeneralInfo, Metrics {
 }
-export type TAttraction = "ride" | "show" | "game";
-export type TRideCategory = "roller coaster" | "water ride" | "family ride";
-export type TGameCategory = "chance" | "turn-based";
-export type TShowCategory = "family show" | "adult show";
-export type TCategory = TRideCategory | TGameCategory | TShowCategory;
-export type TType = TAttraction | TPersonality;
-export interface IType {
-    type: TType;
-    category: TCategory;
+export type AttractionType = "ride" | "show" | "game";
+export type RideCategory = "roller coaster" | "water ride" | "family ride";
+export type GameCategory = "chance" | "turn-based";
+export type ShowCategory = "family show" | "adult show";
+export type AttractionCategory = RideCategory | GameCategory | ShowCategory;
+export type LookupType = AttractionType | Personality;
+export interface TypeInfoObj {
+    type: LookupType;
+    category: AttractionCategory;
 }
-export interface IGeneral extends IIdentify, IDescribe, IType {
+export interface GeneralInfo extends Identify, Describe, TypeInfoObj {
 }
-export interface IAttraction {
-    general: IGeneral;
-    metrics: IMetrics;
-    queue: IQueue<IGuest> | null;
+export interface Attraction {
+    general: GeneralInfo;
+    metrics: Metrics;
+    queue: QueueInstance<GuestInstance> | null;
 }
 //# sourceMappingURL=IAttractions.d.ts.map

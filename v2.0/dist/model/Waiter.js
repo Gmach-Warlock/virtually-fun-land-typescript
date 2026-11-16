@@ -1,4 +1,4 @@
-export class Rider {
+export class Waiter {
     parent;
     guest;
     next = null;

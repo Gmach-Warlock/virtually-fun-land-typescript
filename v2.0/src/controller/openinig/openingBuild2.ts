@@ -2,9 +2,9 @@ import { Guest } from "../../model/Guest.js";
 import { randomizeArr, pullRandomAmount } from "./rngHelpers.js";
 import { determineVip, determinePersonalityType } from "./generateStats.js";
 import { theRegulars, randomGuests } from "../../assets/vflGuests.js";
-import type { IGuest, TPersonality } from "../../types/IGuest.js";
+import type { GuestInstance, Personality } from "../../types/guestTypeDefs.js";
 import { rng } from "./rngHelpers.js";
-import type { IPark } from "../../types/IGame.js";
+import type { ParkInstance } from "../../types/gameTypeDefs.js";
 import { park } from "../../app.js";
 
 export function buildGuests() {
@@ -19,27 +19,45 @@ export function buildGuests() {
   return guests;
 }
 
-export function getInLine(guest: IGuest, park: IPark): void {
-  console.log(
-    `${guest.general.name} is a ${guest.general.pType} and wants to get in line!`,
-  );
+function pickAreaType(guest: GuestInstance) {
+  const type: Personality = guest.general.pType;
+  const arr = ["rides", "games", "shows"];
   const randomIndex = rng(3);
-  if (!randomIndex) return;
-  /*   const lookup: Record<TPersonality, () => void> = {
-    rider: () => park.rides[randomIndex]
+  if (!type || !arr || randomIndex === undefined || randomIndex === null) {
+    console.log(`failed 1`);
+    return;
+  }
+  const lookup: Record<Personality, string> = {
+    rider: arr[0] ?? "rides",
+    gamer: arr[1] ?? "games",
+    watcher: arr[2] ?? "shows",
+    wanderer: arr[randomIndex] ?? "shows",
+  };
 
-  } */
+  const area = lookup[type] as keyof typeof park.arrays;
+  if (area === undefined || area === null) {
+    console.log("Error getting area");
+    return;
+  }
+  return area;
 }
 
-export function fileGuests() {
-  const guests = buildGuests();
-  if (!guests) return;
-  guests.forEach((guest: IGuest) => {
-    if (guest.general.pType === "wanderer") {
-      console.log(
-        `${guest.general.name} is roaming around enjoying the sites!`,
-      );
-    }
-    getInLine(guest, park);
-  });
+export function selectAttraction(guest: GuestInstance, park: ParkInstance) {
+  const area = pickAreaType(guest);
+  if (area === undefined || area === null) {
+    console.log("failed 1");
+    return;
+  }
+  const attractions = park.arrays[area];
+  if (!Array.isArray(attractions) || attractions.length === 0) {
+    console.log("no attractions found in this area");
+    return;
+  }
+  const randomIndex2 = rng(attractions.length);
+  if (randomIndex2 === undefined || randomIndex2 === null) return;
+  const selected = attractions[randomIndex2];
+  if (selected === null || selected === undefined) {
+    console.log("failed 2");
+  }
+  return selected;
 }

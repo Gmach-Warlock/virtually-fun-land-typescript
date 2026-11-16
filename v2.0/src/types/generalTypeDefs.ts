@@ -1,9 +1,4 @@
-export interface IIdentify {
-  id: string;
-  name: string;
-}
-
-export interface ICRUD<T> {
+export interface CRUDInstance<T> {
   add(value: T): void;
   remove?(value: T): void;
   update?(value: T): void;

@@ -1,7 +1,7 @@
-import type { IRideInfo } from "../types/IAttractions.js";
-export interface IShowInfo extends IRideInfo {
+import type { RideInfo } from "../types/attractionsTypeDefs.js";
+export interface ShowInfo extends RideInfo {
 }
-export declare const activeMotherboard: IShowInfo;
-export declare const oldTerminal: IShowInfo;
-export declare const vflShowsArr: IShowInfo[];
+export declare const activeMotherboard: ShowInfo;
+export declare const oldTerminal: ShowInfo;
+export declare const vflShowsArr: ShowInfo[];
 //# sourceMappingURL=vflShows.d.ts.map

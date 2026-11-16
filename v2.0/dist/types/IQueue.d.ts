@@ -1,22 +1,24 @@
-import type { IGuest } from "./IGuest.js";
-import type { IAttraction } from "./IAttractions.js";
-export interface ILinkedChild<T> {
-    next: ILinkedChild<T> | null | undefined;
+import type { GuestInstance } from "./guestTypeDefs.js";
+import type { Attraction } from "./attractionsTypeDefs.js";
+export interface LinkedChild<T> {
+    next: LinkedChild<T> | null | undefined;
 }
-export interface IQueue<T> {
-    attraction: IAttraction;
-    arr: ILinkedChild<T>[];
-    head: ILinkedChild<T> | null;
-    tail: ILinkedChild<T> | null;
-    vipMark: ILinkedChild<T> | null;
-    enqueue(item: ILinkedChild<T>): void;
-    dequeue(): ILinkedChild<T>;
+export interface QueueInstance<T> {
+    attraction: Attraction;
+    arr: LinkedChild<T>[];
+    head: LinkedChild<T> | null;
+    tail: LinkedChild<T> | null;
+    vipMark: LinkedChild<T> | null;
+    enqueue(item: LinkedChild<T>): void;
+    dequeue(): LinkedChild<T>;
     jump(item: T): void;
+    log(): void;
 }
-export type IQueueObj = ILinkedChild<IGuest | null>;
-export interface IWaiter extends ILinkedChild<IWaiter> {
-    guest: IGuest;
-    next: IWaiter | null;
+export type QueueObj = LinkedChild<GuestInstance | null>;
+export interface WaitingGuest extends LinkedChild<WaitingGuest> {
+    guest: GuestInstance;
+    next: WaitingGuest | null;
     isLineMarker: boolean;
+    log(): void;
 }
 //# sourceMappingURL=IQueue.d.ts.map

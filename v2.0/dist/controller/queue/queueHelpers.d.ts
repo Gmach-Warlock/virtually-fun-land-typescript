@@ -1,4 +1,4 @@
-import type { IQueueObj } from "../../types/IQueue.js";
-export declare function enqueueHelper(guest: IQueueObj, head: IQueueObj, tail: IQueueObj): void;
-export declare function dequeueHelper(head: IQueueObj | null, tail: IQueueObj | null): IQueueObj | null;
+import type { QueueObj } from "../../types/queuTypeDefs.ts.js";
+export declare function enqueueHelper(guest: QueueObj, head: QueueObj, tail: QueueObj): void;
+export declare function dequeueHelper(head: QueueObj | null, tail: QueueObj | null): QueueObj | null;
 //# sourceMappingURL=queueHelpers.d.ts.map

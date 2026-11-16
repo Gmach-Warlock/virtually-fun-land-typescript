@@ -1,15 +1,18 @@
 import { Show } from "../../model/Show.js";
 import { Game } from "../../model/Game.js";
 import { Ride } from "../../model/Ride.js";
-import type { IAttractionInfo } from "./openingBuild.js";
-import type { TAttraction, IAttraction } from "../../types/IAttractions.js";
+import type { AttractionInfo } from "./openingBuild.js";
+import type {
+  AttractionType,
+  Attraction,
+} from "../../types/attractionsTypeDefs.js";
 
 export function buildAttractions(
-  arr: IAttractionInfo[],
-  type: TAttraction,
-): IAttraction[] {
+  arr: AttractionInfo[],
+  type: AttractionType,
+): Attraction[] {
   const attractions = arr.map(
-    (attraction: IAttractionInfo): IAttraction | undefined => {
+    (attraction: AttractionInfo): Attraction | undefined => {
       const lookup = {
         ride: () =>
           new Ride(
@@ -49,8 +52,7 @@ export function buildAttractions(
       lookup[type]();
     },
   );
-  console.log(attractions);
   return attractions.filter(
-    (attraction): attraction is IAttraction => attraction !== undefined,
+    (attraction): attraction is Attraction => attraction !== undefined,
   );
 }

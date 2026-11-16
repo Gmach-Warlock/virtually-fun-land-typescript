@@ -1,8 +1,8 @@
-import type { IRideInfo } from "../types/IAttractions.js";
+import type { RideInfo } from "../types/attractionsTypeDefs.js";
 
-export interface IShowInfo extends IRideInfo {}
+export interface ShowInfo extends RideInfo {}
 
-export const activeMotherboard: IShowInfo = {
+export const activeMotherboard: ShowInfo = {
   id: "MotherboardBIOSShow-show-1",
   name: "Motherboard BIOS Show",
   description:
@@ -14,7 +14,7 @@ export const activeMotherboard: IShowInfo = {
   perTurn: 25,
 };
 
-export const oldTerminal: IShowInfo = {
+export const oldTerminal: ShowInfo = {
   id: "OldTerminalRerun-show-2",
   name: "Old Terminal Re-run",
   description:
@@ -26,4 +26,4 @@ export const oldTerminal: IShowInfo = {
   perTurn: 25,
 };
 
-export const vflShowsArr: IShowInfo[] = [activeMotherboard, oldTerminal];
+export const vflShowsArr: ShowInfo[] = [activeMotherboard, oldTerminal];

@@ -1,15 +1,15 @@
 import type {
-  TPersonality,
-  IGuestInfo,
-  IGuest,
-  IGuestTracker,
-} from "../types/IGuest.js";
+  Personality,
+  GuestInfo,
+  GuestInstance,
+  GuestTracker,
+} from "../types/guestTypeDefs.js";
 
-export class Guest implements IGuest {
-  general: IGuestInfo;
-  track: IGuestTracker;
+export class Guest implements GuestInstance {
+  general: GuestInfo;
+  track: GuestTracker;
 
-  constructor(name: string, pType: TPersonality, vip: boolean) {
+  constructor(name: string, pType: Personality, vip: boolean) {
     this.general = {
       id: crypto.randomUUID(),
       name,

@@ -1,26 +1,26 @@
-import { attractionLog } from "../controller/prompts/attractionPrompts.js";
+import { attractionLog } from "../view/prompts/attractionPrompts.js";
 import type {
-  IAttraction,
-  IGeneral,
-  IMetrics,
-  TCategory,
-  TType,
-} from "../types/IAttractions.js";
-import type { IGuest } from "../types/IGuest.js";
-import type { IQueue } from "../types/IQueue.js";
+  Attraction,
+  GeneralInfo,
+  Metrics,
+  AttractionCategory,
+  LookupType,
+} from "../types/attractionsTypeDefs.js";
+import type { GuestInstance } from "../types/guestTypeDefs.js";
+import type { QueueInstance } from "../types/queuTypeDefs.ts.js";
 
-export class Ride implements IAttraction {
-  general: IGeneral;
-  metrics: IMetrics;
-  queue: IQueue<IGuest> | null;
+export class Ride implements Attraction {
+  general: GeneralInfo;
+  metrics: Metrics;
+  queue: QueueInstance<GuestInstance> | null;
 
   constructor(
     id: string,
     name: string,
     description: string,
-    category: TCategory,
+    category: AttractionCategory,
     duration: number,
-    type: TType,
+    type: LookupType,
     perTurn: number,
     max: number,
   ) {

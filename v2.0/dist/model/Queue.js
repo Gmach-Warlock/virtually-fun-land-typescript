@@ -1,4 +1,5 @@
-import { dequeueHelper, enqueueHelper, } from "../controller/queue/queueHelpers.js";
+import { dequeueHelper } from "../controller/queue/queueHelpers.js";
+import { logLine } from "../view/prompts/logLines.js";
 export class Queue {
     attraction;
     arr;
@@ -15,9 +16,18 @@ export class Queue {
         this.vipMark = null;
     }
     enqueue(guest) {
-        if (this.head === null || this.tail === null)
+        if (this.head === null || this.tail === null) {
+            this.head = guest;
+            this.tail = guest;
             return;
-        enqueueHelper(guest, this.head, this.tail);
+        }
+        if (this.head !== null && this.tail !== null) {
+            const temp = this.tail;
+            this.tail = guest;
+            if (temp)
+                temp.next = guest;
+        }
+        this.arr.push(guest);
     }
     dequeue() {
         if (this.head === null && this.tail === null) {
@@ -28,5 +38,8 @@ export class Queue {
         return dequeud;
     }
     jump(item) { }
+    log() {
+        logLine(this);
+    }
 }
 //# sourceMappingURL=Queue.js.map

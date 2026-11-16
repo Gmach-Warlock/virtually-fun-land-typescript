@@ -26,6 +26,12 @@ export const theRegulars = [
     "Mega Vega",
     "Raphael Red",
     "Shadowheart Wolf",
+    "Kano Ball",
+    "Jax Shoulder",
+    "Freddy Ruger",
+    "Jason Hockey",
+    "Scorpion Fire",
+    "Sub Hero",
 ];
 export const randomGuests = [
     "Billy the Man",

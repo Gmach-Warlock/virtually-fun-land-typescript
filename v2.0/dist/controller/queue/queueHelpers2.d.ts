@@ -1,4 +1,4 @@
-import type { IQueueObj } from "../../types/IQueue.js";
-export type IQueueParam = IQueueObj | null;
-export declare function jumpHelper(guest: IQueueParam, head: IQueueParam, tail: IQueueParam): void;
+import type { QueueObj } from "../../types/queuTypeDefs.ts.js";
+export type QueueParam = QueueObj | null;
+export declare function jumpHelper(guest: QueueParam, head: QueueParam, tail: QueueParam): void;
 //# sourceMappingURL=queueHelpers2.d.ts.map

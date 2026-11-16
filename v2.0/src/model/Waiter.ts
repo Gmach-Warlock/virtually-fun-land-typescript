@@ -1,12 +1,12 @@
-import type { IGuest } from "../types/IGuest.js";
-import type { IQueue, IWaiter } from "../types/IQueue.js";
+import type { GuestInstance } from "../types/guestTypeDefs.js";
+import type { QueueInstance, WaitingGuest } from "../types/queuTypeDefs.ts.js";
 
-export class Rider implements IWaiter {
-  parent: IQueue<IGuest>;
-  guest: IGuest;
-  next: IWaiter | null = null;
+export class Waiter implements WaitingGuest {
+  parent: QueueInstance<GuestInstance>;
+  guest: GuestInstance;
+  next: WaitingGuest | null = null;
   isLineMarker: boolean;
-  constructor(parent: IQueue<IGuest>, guest: IGuest) {
+  constructor(parent: QueueInstance<GuestInstance>, guest: GuestInstance) {
     this.parent = parent;
     this.guest = guest;
     this.isLineMarker = false;

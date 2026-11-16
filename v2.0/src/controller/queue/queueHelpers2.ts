@@ -1,11 +1,11 @@
-import type { IQueueObj } from "../../types/IQueue.js";
+import type { QueueObj } from "../../types/queuTypeDefs.ts.js";
 
-export type IQueueParam = IQueueObj | null;
+export type QueueParam = QueueObj | null;
 
 export function jumpHelper(
-  guest: IQueueParam,
-  head: IQueueParam,
-  tail: IQueueParam,
+  guest: QueueParam,
+  head: QueueParam,
+  tail: QueueParam,
 ) {
   if (head === null && tail === null) {
     head = guest;

@@ -1,4 +1,4 @@
-import { attractionLog } from "../controller/prompts/attractionPrompts.js";
+import { attractionLog } from "../view/prompts/attractionPrompts.js";
 export class Show {
     general;
     metrics;

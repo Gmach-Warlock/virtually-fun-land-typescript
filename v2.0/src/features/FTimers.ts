@@ -1,4 +1,4 @@
-import { fileGuests } from "../controller/openinig/openingBuild2.js";
+import { fileGuests } from "../controller/openinig/fileGuests.js";
 import { startGates } from "../view/prompts/openGates.js";
 
 const actions = [fileGuests];

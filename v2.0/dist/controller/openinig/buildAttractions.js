@@ -12,7 +12,6 @@ export function buildAttractions(arr, type) {
             return undefined;
         lookup[type]();
     });
-    console.log(attractions);
     return attractions.filter((attraction) => attraction !== undefined);
 }
 //# sourceMappingURL=buildAttractions.js.map

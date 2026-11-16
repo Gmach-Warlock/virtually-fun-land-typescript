@@ -1,6 +1,6 @@
-import type { IRideInfo } from "../types/IAttractions.js";
+import type { RideInfo } from "../types/attractionsTypeDefs.js";
 
-export const commandLineCoasterInfo: IRideInfo = {
+export const commandLineCoasterInfo: RideInfo = {
   id: "CommandLineCoaster-coaster-1",
   name: "Command Line Coaster",
   description:
@@ -12,7 +12,7 @@ export const commandLineCoasterInfo: IRideInfo = {
   perTurn: 4,
 };
 
-export const frozenChannelInfo: IRideInfo = {
+export const frozenChannelInfo: RideInfo = {
   id: "FrozenChannel-water-1",
   name: "Frozen Channel",
   description:
@@ -24,7 +24,7 @@ export const frozenChannelInfo: IRideInfo = {
   perTurn: 6,
 };
 
-export const multiThreadedProcessorInfo: IRideInfo = {
+export const multiThreadedProcessorInfo: RideInfo = {
   id: "MultiThreadedProcessor-family-1",
   name: "Multi Threaded Processor",
   description:
@@ -36,7 +36,7 @@ export const multiThreadedProcessorInfo: IRideInfo = {
   perTurn: 4,
 };
 
-export const rideInfoArr: IRideInfo[] = [
+export const rideInfoArr: RideInfo[] = [
   commandLineCoasterInfo,
   frozenChannelInfo,
   multiThreadedProcessorInfo,

@@ -1,7 +1,6 @@
 import { Guest } from "../../model/Guest.js";
-import type { IGuest } from "../../types/IGuest.js";
-import type { IPark } from "../../types/IGame.js";
+import type { GuestInstance } from "../../types/guestTypeDefs.js";
+import type { ParkInstance } from "../../types/gameTypeDefs.js";
 export declare function buildGuests(): Guest[];
-export declare function getInLine(guest: IGuest, park: IPark): void;
-export declare function fileGuests(): void;
+export declare function selectAttraction(guest: GuestInstance, park: ParkInstance): import("../../types/attractionsTypeDefs.js").Attraction | GuestInstance | undefined;
 //# sourceMappingURL=openingBuild2.d.ts.map

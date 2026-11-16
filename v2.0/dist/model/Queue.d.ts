@@ -1,16 +1,17 @@
-import type { IAttraction } from "../types/IAttractions.js";
-import type { IGuest } from "../types/IGuest.js";
-import type { ILinkedChild, IQueue, IQueueObj } from "../types/IQueue.js";
-export declare class Queue implements IQueue<IGuest | null> {
-    attraction: IAttraction;
-    arr: IQueueObj[];
-    map: Map<string, IQueueObj>;
-    head: IQueueObj | null;
-    tail: IQueueObj | null;
-    vipMark: IQueueObj | null;
-    constructor(attraction: IAttraction);
-    enqueue(guest: IQueueObj): void;
-    dequeue(): ILinkedChild<IGuest | null>;
-    jump(item: IGuest | null): void;
+import type { Attraction } from "../types/attractionsTypeDefs.js";
+import type { GuestInstance } from "../types/guestTypeDefs.js";
+import type { LinkedChild, QueueInstance, QueueObj, WaitingGuest } from "../types/queuTypeDefs.ts.js";
+export declare class Queue implements QueueInstance<WaitingGuest | null> {
+    attraction: Attraction;
+    arr: QueueObj[];
+    map: Map<string, QueueObj>;
+    head: WaitingGuest | null;
+    tail: WaitingGuest | null;
+    vipMark: WaitingGuest | null;
+    constructor(attraction: Attraction);
+    enqueue(guest: WaitingGuest): void;
+    dequeue(): LinkedChild<GuestInstance | null>;
+    jump(item: WaitingGuest | null): void;
+    log(): void;
 }
 //# sourceMappingURL=Queue.d.ts.map

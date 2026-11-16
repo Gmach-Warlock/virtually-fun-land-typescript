@@ -1,11 +1,11 @@
-import type { IAttraction, IGeneral, IMetrics, TCategory, TType } from "../types/IAttractions.js";
-import type { IGuest } from "../types/IGuest.js";
-import type { IQueue } from "../types/IQueue.js";
-export declare class Show implements IAttraction {
-    general: IGeneral;
-    metrics: IMetrics;
-    queue: IQueue<IGuest> | null;
-    constructor(id: string, name: string, description: string, category: TCategory, duration: number, type: TType, perTurn: number, max: number);
+import type { Attraction, GeneralInfo, Metrics, AttractionCategory, LookupType } from "../types/attractionsTypeDefs.js";
+import type { GuestInstance } from "../types/guestTypeDefs.js";
+import type { QueueInstance } from "../types/queuTypeDefs.ts.js";
+export declare class Show implements Attraction {
+    general: GeneralInfo;
+    metrics: Metrics;
+    queue: QueueInstance<GuestInstance> | null;
+    constructor(id: string, name: string, description: string, category: AttractionCategory, duration: number, type: LookupType, perTurn: number, max: number);
     log(): void;
 }
 //# sourceMappingURL=Show.d.ts.map

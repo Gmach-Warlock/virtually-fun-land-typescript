@@ -7,7 +7,6 @@ export function linkAttractions(rides, games, shows) {
         return newQueue;
     });
     const returnObj = { attractions, queues };
-    console.log(returnObj);
     return returnObj;
 }
 //# sourceMappingURL=linkAttractions.js.map
