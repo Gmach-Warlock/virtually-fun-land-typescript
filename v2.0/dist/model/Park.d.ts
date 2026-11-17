@@ -1,5 +1,5 @@
 import type { ParkInstance, ParkArrays, LogSubscriber, SubscriberFunction } from "../types/gameTypeDefs.js";
-import type { QueueNotify } from "../types/notifyTypeDefs.js";
+import type { ListenerNotify } from "../types/notifyTypeDefs.js";
 import type { GuestInstance } from "../types/guestTypeDefs.js";
 export declare class Park implements ParkInstance {
     #private;
@@ -9,9 +9,11 @@ export declare class Park implements ParkInstance {
     subscribers: LogSubscriber[];
     constructor();
     static getInstance(): ParkInstance;
-    log(type: QueueNotify): void;
-    notify(type: QueueNotify, guest: GuestInstance): void;
+    add(guest: GuestInstance): void;
+    log(type: ListenerNotify): void;
+    notify(type: ListenerNotify, guest: GuestInstance): void;
     open(): void;
+    remove(guest: GuestInstance): void;
     subscribe(subscriber: SubscriberFunction): void;
 }
 //# sourceMappingURL=Park.d.ts.map

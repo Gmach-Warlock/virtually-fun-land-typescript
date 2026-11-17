@@ -1,8 +1,9 @@
-import { attractionLog } from "../view/prompts/attractionPrompts.js";
+import { attractionLog } from "../view/prompts/attractions/attractionPrompts.js";
 export class Game {
     general;
     metrics;
     queue = null;
+    interval;
     constructor(id, name, description, category, duration, type, perTurn, max) {
         ((this.general = {
             id,
@@ -16,6 +17,8 @@ export class Game {
                 perTurn,
                 max,
             }));
+        this.queue = null;
+        this.interval = null;
     }
     log() {
         attractionLog(this);

@@ -9,8 +9,10 @@ max: ${attraction.metrics.max}
 `);
 }
 export function logAttractions() {
-    console.log(`All of our attractions are now open with normal wait times. 
-= = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+    console.log(`
+All of our attractions are now open with normal wait times. 
+
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 `);
     park.arrays.games.forEach((game) => {
         attractionLog(game);

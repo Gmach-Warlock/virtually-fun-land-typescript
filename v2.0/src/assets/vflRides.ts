@@ -7,7 +7,7 @@ export const commandLineCoasterInfo: RideInfo = {
     "A high flying adventure through a virtual command line interface!",
   type: "ride",
   category: "roller coaster",
-  duration: 2,
+  duration: 4,
   max: 30,
   perTurn: 4,
 };
@@ -19,7 +19,7 @@ export const frozenChannelInfo: RideInfo = {
     "A refreshing ride in which you must escape the freezing site, and drop to safety. Try to stay dry!!",
   type: "ride",
   category: "water ride",
-  duration: 3,
+  duration: 5,
   max: 25,
   perTurn: 6,
 };
@@ -31,9 +31,9 @@ export const multiThreadedProcessorInfo: RideInfo = {
     "A high flying adventure through a virtual command line interface!",
   type: "ride",
   category: "family ride",
-  duration: 1,
+  duration: 10,
   max: 30,
-  perTurn: 4,
+  perTurn: 15,
 };
 
 export const rideInfoArr: RideInfo[] = [

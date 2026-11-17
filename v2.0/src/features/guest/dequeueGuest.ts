@@ -1,0 +1,25 @@
+import { DEBUG } from "../../controller/CRUD/DEBUG.js";
+import type { Attraction } from "../../types/attractionsTypeDefs.js";
+import type { DEBUGGER } from "../../types/DEBUGDefs.js";
+import { denyAndReturn } from "../../view/getInput.js";
+
+export function findDequeueGuest(attraction: Attraction) {
+  const guestToRemove = attraction.queue?.head;
+  if (!guestToRemove) {
+    denyAndReturn(`something wrong in findDequeuGuest`);
+    return;
+  }
+  return guestToRemove;
+}
+
+export function handleAttractionTurnover(
+  attraction: Attraction,
+  debug: DEBUGGER = "none",
+) {
+  const queue = attraction.queue;
+  const perTurn = attraction.queue?.attraction.metrics.perTurn ?? 1;
+  for (let i = 0; i < perTurn; i++) {
+    if (debug === "full") DEBUG("CHECK DEQUE FULL", [queue, perTurn]);
+    const guest = queue?.dequeue();
+  }
+}

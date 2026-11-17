@@ -1,3 +1,4 @@
+import { logGuestCurrently } from "../view/prompts/guests/logGuestActivitiis.js";
 export class Guest {
     general;
     track;
@@ -14,7 +15,7 @@ export class Guest {
         };
     }
     log() {
-        console.log(`Currently ${this.general.name} is currently at ${this.track.pLocation}`);
+        logGuestCurrently(this);
     }
 }
 //# sourceMappingURL=Guest.js.map

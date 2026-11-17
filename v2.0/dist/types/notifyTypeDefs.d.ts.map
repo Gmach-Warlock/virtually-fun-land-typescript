@@ -1,1 +1,1 @@
-{"version":3,"file":"notifyTypeDefs.d.ts","sourceRoot":"","sources":["../../src/types/notifyTypeDefs.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,WAAW,GACnB,YAAY,GACZ,SAAS,GACT,SAAS,GACT,MAAM,GACN,OAAO,CAAC"}
+{"version":3,"file":"notifyTypeDefs.d.ts","sourceRoot":"","sources":["../../src/types/notifyTypeDefs.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,WAAW,GACnB,YAAY,GACZ,SAAS,GACT,SAAS,GACT,MAAM,GACN,OAAO,CAAC;AAEZ,MAAM,MAAM,eAAe,GAAG,KAAK,GAAG,QAAQ,GAAG,YAAY,CAAC;AAE9D,MAAM,MAAM,cAAc,GAAG,WAAW,GAAG,eAAe,CAAC"}

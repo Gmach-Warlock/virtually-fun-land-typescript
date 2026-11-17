@@ -1,6 +1,7 @@
 import { stdin, stdout } from "process";
 import readline from "readline";
 import { isCleanNumber, isCleanString } from "./cleanInput.js";
+import { mainMenu } from "./menu.js";
 
 export const rl = readline.createInterface({
   input: stdin,
@@ -29,4 +30,11 @@ export async function getStringInput(question: string, numGuard = true) {
     return;
   }
   return answer;
+}
+
+export function denyAndReturn(
+  message: string = "Somthing went wrong. Returning",
+): void {
+  console.log(message);
+  mainMenu();
 }

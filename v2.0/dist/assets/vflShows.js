@@ -4,9 +4,9 @@ export const activeMotherboard = {
     description: "A tour through the inside of a computer. Learn how data travels through your computer in visual and audio spectacular!!",
     type: "show",
     category: "family show",
-    duration: 10,
-    max: 50,
-    perTurn: 25,
+    duration: 5,
+    max: 30,
+    perTurn: 10,
 };
 export const oldTerminal = {
     id: "OldTerminalRerun-show-2",
@@ -14,9 +14,9 @@ export const oldTerminal = {
     description: "A place for the parents to go relax and enjoy more adult themed comedy show. Alcohol served in lobby only! ID required",
     type: "show",
     category: "adult show",
-    duration: 10,
-    max: 25,
-    perTurn: 25,
+    duration: 7,
+    max: 50,
+    perTurn: 15,
 };
 export const vflShowsArr = [activeMotherboard, oldTerminal];
 //# sourceMappingURL=vflShows.js.map

@@ -7,7 +7,7 @@ export const fightSite: GameInfo = {
   name: "Fight Site",
   description:
     "A turn based battle game designed in a retro fashion. Choose your class and see if you have what it takes to defeat your opponent!",
-  duration: 30000,
+  duration: 3,
   category: "turn-based",
   perTurn: 1,
   max: 20,
@@ -20,7 +20,7 @@ export const lizardSpock: GameInfo = {
   description:
     "An ode to a classic game retold. This is rock paper scissors with a twist.",
   category: "chance",
-  duration: 45000,
+  duration: 2,
   perTurn: 1,
   max: 25,
   type: "game",

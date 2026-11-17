@@ -1,5 +1,5 @@
-import { logLine, logNameString } from "./logLines.js";
-export function logAttendance(arrays) {
+import { park } from "../../app.js";
+export function logAttendance(arrays = park.arrays) {
     console.log(`
   A fine turnout today. There are currently ${arrays.guests.length} people in attendance. 
   `);
@@ -12,32 +12,12 @@ export function logGuests(arrays) {
         return;
     // logNameString(names)
 }
-export function logOpeningRush(arrays, initialize = false) {
-    console.log(`
-  A fine turnout today. There are currently ${arrays.guests.length} people in attendance. 
-  `);
-    if (initialize) {
-        console.log(`After hearing the announcement, the guests all rush to their favorite attractions!!`);
-    }
-    arrays.games.forEach((game) => {
-        if (game.queue) {
-            logLine(game.queue);
-        }
-    });
-    arrays.rides.forEach((ride) => {
-        if (ride.queue) {
-            logLine(ride.queue);
-        }
-    });
-    arrays.shows.forEach((show) => {
-        if (show.queue) {
-            logLine(show.queue);
-        }
-    });
-}
 export function logRoamer(guest) {
     if (guest.general.pType === "wanderer") {
         console.log(`${guest.general.name} is roaming around enjoying the sites!`);
     }
+}
+export function logGuestCurrently(guest) {
+    console.log(`${guest.general.name} is ${guest.track.pCurrently}at ${guest.track.pLocation}`);
 }
 //# sourceMappingURL=logGuestActivitiis.js.map

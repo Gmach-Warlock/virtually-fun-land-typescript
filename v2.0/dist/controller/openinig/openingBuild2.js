@@ -1,8 +1,9 @@
 import { Guest } from "../../model/Guest.js";
-import { randomizeArr, pullRandomAmount } from "./rngHelpers.js";
-import { determineVip, determinePersonalityType } from "./generateStats.js";
-import { theRegulars, randomGuests } from "../../assets/vflGuests.js";
-import { rng } from "./rngHelpers.js";
+import { randomizeArr, pullRandomAmount } from "../rng/rngHelpers.js";
+import { determineVip, determinePersonalityType, } from "../rng/generateStats.js";
+import { randomGuests } from "../../assets/vflGuests.js";
+import { theRegulars } from "../../assets/vflRegulars.js";
+import { rng } from "../rng/rngHelpers.js";
 import { park } from "../../app.js";
 export function buildGuests() {
     const regulars = randomizeArr(theRegulars) ?? [];

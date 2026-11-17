@@ -4,3 +4,7 @@ export type QueueNotify =
   | "dequeue"
   | "jump"
   | "leave";
+
+export type GuestListNotify = "add" | "remove" | "initialize";
+
+export type ListenerNotify = QueueNotify | GuestListNotify;

@@ -31,3 +31,13 @@ export function removeItemFromArray<type>(
   });
   return newArray;
 }
+
+export function removeItem<type>(arr: type[], item: type) {
+  if (!arr) {
+    console.log(`no item to remove in that array`);
+    return arr;
+  }
+
+  const newArr = arr.filter((itm: type) => itm !== item);
+  return newArr;
+}

@@ -1,5 +1,5 @@
-import type { GuestInstance, Personality } from "./guestTypeDefs.js";
-import type { QueueInstance } from "./queuTypeDefs.ts.js";
+import type { Personality } from "./guestTypeDefs.js";
+import type { QueueInstance, WaitingGuest } from "./queuTypeDefs.ts.js";
 export interface Identify {
     id: string;
     name: string;
@@ -26,9 +26,11 @@ export interface TypeInfoObj {
 }
 export interface GeneralInfo extends Identify, Describe, TypeInfoObj {
 }
+export type IntervalId = ReturnType<typeof setInterval> | null;
 export interface Attraction {
     general: GeneralInfo;
     metrics: Metrics;
-    queue: QueueInstance<GuestInstance> | null;
+    queue: QueueInstance<WaitingGuest> | null;
+    interval: IntervalId;
 }
 //# sourceMappingURL=attractionsTypeDefs.d.ts.map

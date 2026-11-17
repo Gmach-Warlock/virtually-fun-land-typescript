@@ -4,6 +4,7 @@ import type {
   GuestInstance,
   GuestTracker,
 } from "../types/guestTypeDefs.js";
+import { logGuestCurrently } from "../view/prompts/guests/logGuestActivitiis.js";
 
 export class Guest implements GuestInstance {
   general: GuestInfo;
@@ -22,8 +23,6 @@ export class Guest implements GuestInstance {
     };
   }
   log() {
-    console.log(
-      `Currently ${this.general.name} is currently at ${this.track.pLocation}`,
-    );
+    logGuestCurrently(this);
   }
 }

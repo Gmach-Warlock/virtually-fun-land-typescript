@@ -9,7 +9,7 @@ export class Waiter {
         this.isLineMarker = false;
     }
     log() {
-        console.log(`${this.guest.general.name} is in currently in line for`);
+        console.log(`${this.guest.general.name} is in currently in line for ${this.parent.attraction.general.name}`);
     }
 }
 //# sourceMappingURL=Waiter.js.map

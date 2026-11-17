@@ -7,19 +7,19 @@ export interface LinkedChild<T> {
 
 export interface QueueInstance<T> {
   attraction: Attraction;
-  arr: LinkedChild<T>[];
-  head: LinkedChild<T> | null;
-  tail: LinkedChild<T> | null;
-  vipMark: LinkedChild<T> | null;
-  enqueue(item: LinkedChild<T>): void;
-  dequeue(): LinkedChild<T>;
+  arr: T[];
+  head: T | null;
+  tail: T | null;
+  vipMark: T | null;
+  enqueue(item: T): void;
+  dequeue(): T;
   jump(item: T): void;
   log(): void;
 }
 
 export type QueueObj = LinkedChild<GuestInstance | null>;
 
-export interface WaitingGuest extends LinkedChild<WaitingGuest> {
+export interface WaitingGuest {
   guest: GuestInstance;
   next: WaitingGuest | null;
   isLineMarker: boolean;

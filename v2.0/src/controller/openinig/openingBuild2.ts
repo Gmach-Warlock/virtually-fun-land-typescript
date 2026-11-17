@@ -1,9 +1,13 @@
 import { Guest } from "../../model/Guest.js";
-import { randomizeArr, pullRandomAmount } from "./rngHelpers.js";
-import { determineVip, determinePersonalityType } from "./generateStats.js";
-import { theRegulars, randomGuests } from "../../assets/vflGuests.js";
+import { randomizeArr, pullRandomAmount } from "../rng/rngHelpers.js";
+import {
+  determineVip,
+  determinePersonalityType,
+} from "../rng/generateStats.js";
+import { randomGuests } from "../../assets/vflGuests.js";
+import { theRegulars } from "../../assets/vflRegulars.js";
 import type { GuestInstance, Personality } from "../../types/guestTypeDefs.js";
-import { rng } from "./rngHelpers.js";
+import { rng } from "../rng/rngHelpers.js";
 import type { ParkInstance } from "../../types/gameTypeDefs.js";
 import { park } from "../../app.js";
 

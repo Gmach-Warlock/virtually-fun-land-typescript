@@ -18,4 +18,12 @@ export function removeItemFromArray(arr, itm, prop, value) {
     });
     return newArray;
 }
+export function removeItem(arr, item) {
+    if (!arr) {
+        console.log(`no item to remove in that array`);
+        return arr;
+    }
+    const newArr = arr.filter((itm) => itm !== item);
+    return newArr;
+}
 //# sourceMappingURL=CRUDHelpers.js.map

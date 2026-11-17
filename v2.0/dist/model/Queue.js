@@ -1,5 +1,6 @@
-import { dequeueHelper } from "../controller/queue/queueHelpers.js";
-import { logLine } from "../view/prompts/logLines.js";
+import { updateGuestTracker } from "../controller/openinig/fileGuests.js";
+import { denyAndReturn } from "../view/getInput.js";
+import { logLine } from "../view/prompts/attractions/logLines.js";
 export class Queue {
     attraction;
     arr;
@@ -16,6 +17,9 @@ export class Queue {
         this.vipMark = null;
     }
     enqueue(guest) {
+        if (guest.guest.general.vip) {
+            console.log(`${guest.guest.general.name} is a VIP so they enter the fast Pass Zone! `);
+        }
         if (this.head === null || this.tail === null) {
             this.head = guest;
             this.tail = guest;
@@ -28,13 +32,25 @@ export class Queue {
                 temp.next = guest;
         }
         this.arr.push(guest);
+        guest.guest.track.pCurrently = "waiting";
+        guest.guest.track.pLocation = this.attraction.general.name;
     }
     dequeue() {
         if (this.head === null && this.tail === null) {
             console.log(`Nobody left in line for ${this.attraction.general.name}`);
             return null;
         }
-        const dequeud = dequeueHelper(this.head, this.tail);
+        const dequeud = this.head;
+        if (dequeud !== null) {
+            this.head = dequeud.next;
+        }
+        const indexToSplice = this.arr.findIndex((guest) => guest.guest.general.id === dequeud?.guest.general.id);
+        if (!indexToSplice) {
+            denyAndReturn(`Couldn't get index`);
+            return null;
+        }
+        this.arr = this.arr.splice(indexToSplice, 1);
+        // DEBUG("CHECK INDEX DEQUEUE", [dequeud]);
         return dequeud;
     }
     jump(item) { }

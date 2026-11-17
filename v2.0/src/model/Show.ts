@@ -5,14 +5,14 @@ import type {
   AttractionCategory,
   LookupType,
 } from "../types/attractionsTypeDefs.js";
-import { attractionLog } from "../view/prompts/attractionPrompts.js";
-import type { GuestInstance } from "../types/guestTypeDefs.js";
-import type { QueueInstance } from "../types/queuTypeDefs.ts.js";
+import { attractionLog } from "../view/prompts/attractions/attractionPrompts.js";
+import type { QueueInstance, WaitingGuest } from "../types/queuTypeDefs.ts.js";
 
 export class Show implements Attraction {
   general: GeneralInfo;
   metrics: Metrics;
-  queue: QueueInstance<GuestInstance> | null;
+  queue: QueueInstance<WaitingGuest> | null;
+  interval: NodeJS.Timeout | null;
 
   constructor(
     id: string,
@@ -37,6 +37,7 @@ export class Show implements Attraction {
       max,
     };
     this.queue = null;
+    this.interval = null;
   }
   log() {
     attractionLog(this);

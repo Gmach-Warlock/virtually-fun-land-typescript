@@ -1,4 +1,6 @@
 import type { GuestInstance } from "../types/guestTypeDefs.js";
-import type { QueueNotify } from "../types/notifyTypeDefs.js";
-export declare function attractionsLogSubscriber(type: QueueNotify, guest: GuestInstance): void;
+import type { ListenerNotify } from "../types/notifyTypeDefs.js";
+export declare function attractionsLogSubscriber(type: ListenerNotify, guest: GuestInstance): void;
+export declare function guestListLogSubscriber(type: ListenerNotify): void;
+export declare const logListeners: (typeof attractionsLogSubscriber)[];
 //# sourceMappingURL=attractionSubscriber.d.ts.map

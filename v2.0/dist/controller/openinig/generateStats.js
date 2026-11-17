@@ -2,9 +2,9 @@ export function determinePersonalityType() {
     const value = Math.random();
     if (!value)
         return;
-    if (value > 0.6)
+    if (value > 0.7)
         return "rider";
-    if (value > 0.3)
+    if (value > 0.4)
         return "gamer";
     if (value > 0.1)
         return "watcher";
