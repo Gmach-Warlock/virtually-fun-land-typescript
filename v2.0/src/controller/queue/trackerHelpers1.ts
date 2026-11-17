@@ -12,6 +12,7 @@ export function changePCurrently(
   reason: QueueNotify,
 ) {
   const lookup: Record<QueueNotify, Partial<GuestCurrently>> = {
+    initialize: "initializing",
     enqueue: "waiting",
     dequeue: "riding",
     jump: "waiting",

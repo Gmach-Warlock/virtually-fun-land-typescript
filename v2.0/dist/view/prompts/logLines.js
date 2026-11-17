@@ -1,7 +1,4 @@
-export function createNameString(arr) {
-    const names = arr
-        .map((item) => item.guest.general.name)
-        .filter((name) => typeof name === "string");
+export function listNamesArr(names) {
     if (names.length === 0) {
         return "";
     }
@@ -23,6 +20,13 @@ export function createNameString(arr) {
     console.log(`Guests: ${str}`);
     return str;
 }
+export function logNameString(arr) {
+    const names = arr
+        .map((item) => item.guest.general.name)
+        .filter((name) => typeof name === "string");
+    const str = listNamesArr(names);
+    return str;
+}
 export function logLine(queue) {
     const arr = queue.arr;
     const name = queue.attraction.general.name;
@@ -32,10 +36,10 @@ export function logLine(queue) {
         console.log(`There is nobody in line for ${name}`);
         return;
     }
+    console.log(`-    -    -    -    -    -    -    -    -    -    -
+    `);
     console.log(`Currently there are ${queue.arr.length} guests in line for ${queue.attraction.general.name}. `);
-    const names = arr.map((item) => item.guest.general.name);
-    console.log(names);
-    let str = "";
-    console.log(str);
+    logNameString(arr);
+    console.log(``);
 }
 //# sourceMappingURL=logLines.js.map

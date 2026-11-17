@@ -1,3 +1,2 @@
-import { Park } from "./model/Park.js";
-export declare const park: Park;
+export declare const park: import("./types/gameTypeDefs.js").ParkInstance;
 //# sourceMappingURL=app.d.ts.map

@@ -15,19 +15,13 @@ export function getInLine(guest: GuestInstance, park: ParkInstance): void {
   const newWaiter = new Waiter(queue, guest);
   // console.log("check1 ", area, queue.head, newWaiter);
   queue.enqueue(newWaiter);
-  queue.log();
 }
 
 export function fileGuests() {
   const guests = buildGuests();
   if (!guests) return;
   guests.forEach((guest: GuestInstance) => {
-    if (guest.general.pType === "wanderer") {
-      console.log(
-        `${guest.general.name} is roaming around enjoying the sites!`,
-      );
-    }
     getInLine(guest, park);
   });
-  park.log();
+  park.log("initialize");
 }

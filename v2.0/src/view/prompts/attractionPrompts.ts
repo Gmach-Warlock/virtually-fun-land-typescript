@@ -13,17 +13,21 @@ max: ${attraction.metrics.max}
 
 export function logAttractions() {
   console.log(`All of our attractions are now open with normal wait times. 
-= = = = = = = = = = = = = = = = = = = = = = = = = = = = = =`);
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+`);
   park.arrays.games.forEach((game) => {
     attractionLog(game);
   });
-  console.log(`= = = = = = = = = = = = = = = = = = = = = = = = = = = =`);
+  console.log(`= = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    `);
   park.arrays.rides.forEach((ride) => {
     attractionLog(ride);
   });
-  console.log(`= = = = = = = = = = = = = = = = = = = = = = = = = = = =`);
+  console.log(`= = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    `);
   park.arrays.shows.forEach((show) => {
     attractionLog(show);
   });
-  console.log(`= = = = = = = = = = = = = = = = = = = = = = = = = = = =`);
+  console.log(`= = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    `);
 }

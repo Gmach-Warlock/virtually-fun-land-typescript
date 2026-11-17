@@ -1,1 +1,6 @@
-export type QueueNotify = "enqueue" | "dequeue" | "jump" | "leave";
+export type QueueNotify =
+  | "initialize"
+  | "enqueue"
+  | "dequeue"
+  | "jump"
+  | "leave";

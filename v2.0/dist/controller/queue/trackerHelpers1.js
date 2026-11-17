@@ -1,5 +1,6 @@
 export function changePCurrently(queue, guest, reason) {
     const lookup = {
+        initialize: "initializing",
         enqueue: "waiting",
         dequeue: "riding",
         jump: "waiting",
