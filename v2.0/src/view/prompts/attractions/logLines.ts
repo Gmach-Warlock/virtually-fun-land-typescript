@@ -1,5 +1,6 @@
 import type { WaitingGuest } from "../../../types/queuTypeDefs.ts.js";
 import type { QueueInstance } from "../../../types/queuTypeDefs.ts.js";
+import { logLinkedGuests } from "../guests/logLinkedGuests.js";
 
 export function listNamesArr(names: string[]) {
   if (names.length === 0) {
@@ -56,7 +57,8 @@ export function logLine(queue: QueueInstance<WaitingGuest>): void {
   console.log(
     `Currently there are ${queue.arr.length} guests in line for ${queue.attraction.general.name}. `,
   );
-  logNameString(arr);
+  // logNameString(arr);
+  logLinkedGuests(queue);
   logWaitTime(queue);
   console.log(``);
 }

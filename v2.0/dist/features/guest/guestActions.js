@@ -1,6 +1,12 @@
 import { park } from "../../app.js";
 import { getInLine } from "../../controller/openinig/fileGuests.js";
-import { determineIsWinner } from "../../controller/rng/gameStats.js";
+import { viewAttractionLines } from "../attractions/checkAttractionLines.js";
+export function determineRestock() {
+    const random = Math.random();
+    if (random > 0.3)
+        return false;
+    return true;
+}
 export function findRestockers() {
     const guests = park.arrays.guests;
     const available = guests.filter((guest) => guest.track.pCurrently !== "waiting" &&
@@ -13,10 +19,11 @@ export function restockLines() {
     if (!Array.isArray(available))
         return;
     available.forEach((guest) => {
-        const isTrue = determineIsWinner();
+        const isTrue = determineRestock();
         if (isTrue) {
             getInLine(guest, park, false);
         }
     });
+    viewAttractionLines();
 }
 //# sourceMappingURL=guestActions.js.map

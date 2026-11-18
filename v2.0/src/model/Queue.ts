@@ -1,8 +1,6 @@
-import { updateGuestTracker } from "../controller/openinig/fileGuests.js";
 import type { Attraction } from "../types/attractionsTypeDefs.js";
 import type { ParkLocation } from "../types/guestTypeDefs.js";
 import type { QueueInstance, WaitingGuest } from "../types/queuTypeDefs.ts.js";
-import { denyAndReturn } from "../view/getInput.js";
 import { logLine } from "../view/prompts/attractions/logLines.js";
 
 export class Queue implements QueueInstance<WaitingGuest> {
@@ -23,47 +21,85 @@ export class Queue implements QueueInstance<WaitingGuest> {
   }
 
   enqueue(guest: WaitingGuest): void {
+    guest.guest.track.pCurrently = "waiting";
+    guest.guest.track.pLocation = this.attraction.general.name as ParkLocation;
+    this.map.set(guest.guest.general.id, guest);
     if (guest.guest.general.vip) {
-      console.log(
-        `${guest.guest.general.name} is a VIP so they enter the fast Pass Zone! `,
-      );
+      this.jump(guest);
+      return;
     }
     if (this.head === null || this.tail === null) {
       this.head = guest;
       this.tail = guest;
+      guest.next = null;
       return;
     }
-    if (this.head !== null && this.tail !== null) {
-      const temp = this.tail;
+    if (this.head !== null || this.tail !== null) {
+      this.tail.next = guest;
       this.tail = guest;
-      if (temp) temp.next = guest;
+      guest.next = null;
     }
     this.arr.push(guest);
-    guest.guest.track.pCurrently = "waiting";
-    guest.guest.track.pLocation = this.attraction.general.name as ParkLocation;
   }
   dequeue(): WaitingGuest {
-    if (this.head === null && this.tail === null) {
+    if (this.head === null) {
       console.log(`Nobody left in line for ${this.attraction.general.name}`);
       return null as unknown as WaitingGuest;
     }
     const dequeud = this.head;
-    if (dequeud !== null) {
-      this.head = dequeud.next;
+    this.head = dequeud.next;
+    if (this.head === null) {
+      this.tail === null;
+    }
+    if (dequeud?.guest?.general?.id) {
+      this.map.delete(dequeud.guest.general.id);
     }
     const indexToSplice = this.arr.findIndex(
       (guest: WaitingGuest) =>
         guest.guest.general.id === dequeud?.guest.general.id,
     );
-    if (!indexToSplice) {
-      denyAndReturn(`Couldn't get index`);
-      return null as unknown as WaitingGuest;
+    if (indexToSplice !== -1) {
+      this.arr.splice(indexToSplice, 1);
     }
-    this.arr = this.arr.splice(indexToSplice, 1);
-    // DEBUG("CHECK INDEX DEQUEUE", [dequeud]);
+    dequeud.next = null;
     return dequeud as unknown as WaitingGuest;
   }
-  jump(item: WaitingGuest): void {}
+  jump(guest: WaitingGuest): void {
+    console.log(
+      `${guest.guest.general.name} is a VIP and has entered the Fast Pass Zone for ${this.attraction.general.name}!`,
+    );
+    guest.guest.track.pCurrently = "waiting";
+    guest.guest.track.pLocation = this.attraction.general.name as ParkLocation;
+    if (this.head === null && this.tail === null) {
+      this.head = guest;
+      this.tail = guest;
+      guest.next = null;
+      this.arr.push(guest);
+      return;
+    }
+    const fastPassSize = 3;
+    let current = this.head;
+    let index = 0;
+    while (
+      current !== null &&
+      current.next !== null &&
+      index < fastPassSize - 1
+    ) {
+      current = current?.next;
+      index++;
+    }
+    if (current === null) {
+      return;
+    }
+    const nextNode = current.next;
+    current.next = guest;
+    guest.next = nextNode;
+    if (nextNode === null) {
+      this.tail = guest;
+    }
+    const targetIndex = Math.min(index + 1, this.arr.length);
+    this.arr.splice(targetIndex, 0, guest);
+  }
 
   log() {
     logLine(this);

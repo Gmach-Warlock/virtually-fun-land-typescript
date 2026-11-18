@@ -1,3 +1,4 @@
+import { logLinkedGuests } from "../guests/logLinkedGuests.js";
 export function listNamesArr(names) {
     if (names.length === 0) {
         return "";
@@ -47,7 +48,8 @@ export function logLine(queue) {
     console.log(`-    -    -    -    -    -    -    -    -    -    -
     `);
     console.log(`Currently there are ${queue.arr.length} guests in line for ${queue.attraction.general.name}. `);
-    logNameString(arr);
+    // logNameString(arr);
+    logLinkedGuests(queue);
     logWaitTime(queue);
     console.log(``);
 }

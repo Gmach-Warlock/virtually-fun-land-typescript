@@ -7,7 +7,7 @@ import { getNumericInput } from "./getInput.js";
 import { startMenu } from "./prompts/open/openMenu.js";
 import { enqueueAttraction } from "../features/attractions/enqueAttraction.js";
 import { viewAttractionLines } from "../features/attractions/checkAttractionLines.js";
-import { closeIntervals } from "../features/parkTimeouts.js";
+import { closeIntervals } from "../features/intervals/closeIntervals.js";
 
 export function respondToMainMenu(answer: number) {
   const lookup: any = {

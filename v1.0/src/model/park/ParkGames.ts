@@ -31,7 +31,7 @@ export class ParkGames {
 `);
     this.games?.forEach((game) => game.log());
     console.log(`
--   -   -   -   -   -   -   -   -   -   -   -   -   -`);
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -`);
   }
 }
 

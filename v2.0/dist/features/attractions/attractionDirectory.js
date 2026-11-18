@@ -1,5 +1,3 @@
-import { park } from "../../app.js";
-import { DEBUG } from "../../controller/CRUD/DEBUG.js";
 import { getNumericInput } from "../../view/getInput.js";
 import { mainMenu } from "../../view/menu.js";
 import { logAttractions } from "../../view/prompts/attractions/attractionPrompts.js";

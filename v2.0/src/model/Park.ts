@@ -5,10 +5,8 @@ import {
   buildShows,
 } from "../controller/openinig/openingBuild.js";
 import { linkAttractions } from "../controller/openinig/linkAttractions.js";
-import {
-  parkOpeningTimeouts,
-  startAttractionIntervals,
-} from "../features/parkTimeouts.js";
+import { parkOpeningTimeouts } from "../features/intervals/parkTimeouts.js";
+import { startAttractionIntervals } from "../features/intervals/parkIntervals.js";
 import type {
   ParkInstance,
   ParkArrays,

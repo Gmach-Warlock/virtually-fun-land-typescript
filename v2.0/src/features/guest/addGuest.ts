@@ -1,31 +1,10 @@
 import { park } from "../../app.js";
 import { determineVip } from "../../controller/rng/generateStats.js";
 import { Guest } from "../../model/Guest.js";
-import type { Personality } from "../../types/guestTypeDefs.js";
-import { getNumericInput, getStringInput } from "../../view/getInput.js";
+import { getStringInput } from "../../view/getInput.js";
 import { denyAndReturn } from "../../view/getInput.js";
 import { mainMenu } from "../../view/menu.js";
-
-async function createPersonality() {
-  const key = await getNumericInput(
-    `What word best describes this guest:
-        
-1. Rider
-2. Gamer
-3. Watcher
-4. Wanderer
-Please choose one of the following. `,
-    4,
-  );
-  if (!key) return;
-  const lookup: Record<number, Personality> = {
-    1: "rider",
-    2: "gamer",
-    3: "watcher",
-    4: "wanderer",
-  };
-  return lookup[Number(key)];
-}
+import { createPersonality } from "../../view/prompts/guests/createPersonality.js";
 
 export async function makeNewGuest() {
   const name = await getStringInput(

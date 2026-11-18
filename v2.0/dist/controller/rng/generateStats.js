@@ -14,7 +14,7 @@ export function determineVip() {
     const value = Math.random();
     if (!value)
         return;
-    if (value > 0.1)
+    if (value > 0.05)
         return false;
     return true;
 }

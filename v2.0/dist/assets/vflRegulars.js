@@ -27,6 +27,7 @@ export const theRegulars = [
     "Raphael Red",
     "Shadowheart Wolf",
     "Kano Ball",
+    "Tika Frika",
     "Jax Shoulder",
     "Freddy Ruger",
     "Jason Hockey",
@@ -37,6 +38,7 @@ export const theRegulars = [
     "Sephi Moth",
     "Game Roy",
     "Soy Bean",
+    "Tan Jan",
     "Ratchet Sank",
     "Toad Pool",
     "Daisy Hazy",
@@ -46,5 +48,8 @@ export const theRegulars = [
     "Hojo Mojo",
     "Milli Nilli",
     "Tifa Punch",
+    "Sonny Hunny",
+    "Rainy Mae",
+    "Fun Orion",
 ];
 //# sourceMappingURL=vflRegulars.js.map

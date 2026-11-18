@@ -1,7 +1,7 @@
 import { logLine } from "../attractions/logLines.js";
 export function attractionsPrompt(arrays) {
     console.log(`
-  There are currently ${arrays.guests.length} people in attendance. Here are the Attractions and their current queue members and wait times.
+There are currently ${arrays.guests.length} people in attendance. Here are the Attractions and their current queue members and wait times.
   `);
 }
 function initialAttractionsPrompt() {

@@ -10,7 +10,7 @@ export declare class Queue implements QueueInstance<WaitingGuest> {
     constructor(attraction: Attraction);
     enqueue(guest: WaitingGuest): void;
     dequeue(): WaitingGuest;
-    jump(item: WaitingGuest): void;
+    jump(guest: WaitingGuest): void;
     log(): void;
 }
 //# sourceMappingURL=Queue.d.ts.map
